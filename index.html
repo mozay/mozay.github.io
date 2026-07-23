@@ -3,36 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mozay Apps</title>
+    <title>Mozay Apps - Support & Contact</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #0d1117;
             color: #c9d1d9;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
+            padding: 20px;
         }
-        .container {
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 450px;
+            width: 100%;
             text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
         h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #fff;
+            font-size: 26px;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
-        p {
-            color: #8b949e;
+        .subtitle {
             font-size: 14px;
+            color: #8b949e;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #58a6ff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 6px;
+        }
+        p, li {
+            font-size: 14px;
+            color: #c9d1d9;
+            line-height: 1.5;
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+        li {
+            padding: 6px 0;
+            border-bottom: 1px solid #21262d;
+        }
+        .contact-box {
+            background-color: #21262d;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .contact-box a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #484f58;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="card">
         <h1>Mozay Apps</h1>
-        <p>Mobile applications & development.</p>
+        <div class="subtitle">Mobile Game & App Development</div>
+
+        <div class="section-title">Support & Contact</div>
+        <p>Need help with any of our applications or have feedback? Reach out to us directly via email:</p>
+        
+        <div class="contact-box">
+            <a href="mailto:mehmetozay94@gmail.com">mehmetozay94@gmail.com</a>
+        </div>
+        <div class="footer">
+            &copy; 2026 Mozay Apps. All rights reserved.
+        </div>
     </div>
 </body>
 </html>
