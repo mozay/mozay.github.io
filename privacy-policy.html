@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — KetoChef</title>
+<meta name="description" content="What data the KetoChef app collects, why it is collected, who it is shared with, and how to delete it.">
+<meta name="theme-color" content="#F7F4EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root{color-scheme:light dark;--bg:#F7F4EC;--surface:#FFFDF8;--ink:#14170F;--ink-soft:#5F6355;
+      --ink-faint:#969A8B;--accent:#1F7A3D;--accent-soft:#E5EFE2;--amber:#C8811F;--amber-soft:#F7EEDC;
+      --line:#E4DFD1;--radius:18px;--measure:34rem}
+    @media (prefers-color-scheme:dark){:root{--bg:#0B0B0B;--surface:#161616;--ink:#F2F2F0;--ink-soft:#A3A3A0;
+      --ink-faint:#6B6B68;--accent:#58C983;--accent-soft:#16261B;--amber:#E8A33D;--amber-soft:#2C2211;--line:#262626}}
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:44rem;margin:0 auto;padding:0 1.5rem 5rem}
+    header.masthead{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem}
+    .brand{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:800;
+      letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 1.1rem}
+    .brand svg{width:1.15em;height:1.15em}
+    h1{font-family:Fraunces,"Iowan Old Style",Georgia,"Times New Roman",serif;font-weight:800;
+      font-size:clamp(2.1rem,7vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 1rem}
+    .updated{display:inline-block;font-size:.8rem;font-weight:600;color:var(--ink-soft);
+      background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem;margin:0}
+    .lede{margin:1.6rem 0 0;font-size:1.06rem;color:var(--ink-soft);max-width:var(--measure)}
+    nav.toc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:1.35rem 1.5rem;margin:0 0 3rem}
+    nav.toc h2{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--ink-faint);margin:0 0 .85rem}
+    nav.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:2rem}
+    @media (max-width:34rem){nav.toc ol{columns:1}}
+    nav.toc li{break-inside:avoid;margin:0 0 .45rem;font-size:.93rem}
+    nav.toc a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;
+      transition:color .15s,border-color .15s}
+    nav.toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+    section{margin:0 0 2.75rem;scroll-margin-top:1.5rem}
+    h2.section{font-family:Fraunces,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:1.4rem;
+      letter-spacing:-.01em;line-height:1.25;margin:0 0 .9rem;display:flex;align-items:baseline;gap:.7rem}
+    h2.section .num{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:.72rem;font-weight:800;
+      letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);border-radius:999px;
+      padding:.22rem .6rem;flex:none;transform:translateY(-.15em)}
+    h3{font-size:.96rem;font-weight:700;margin:1.7rem 0 .45rem}
+    p{margin:0 0 1rem;max-width:var(--measure)}
+    ul{margin:0 0 1rem;padding-left:1.15rem;max-width:var(--measure)}
+    li{margin:0 0 .5rem}
+    li::marker{color:var(--accent)}
+    a{color:var(--accent)}
+    .callout{background:var(--amber-soft);border:1px solid var(--amber);border-radius:var(--radius);
+      padding:1.1rem 1.3rem;margin:0 0 1.25rem;max-width:var(--measure)}
+    .callout p:last-child{margin-bottom:0}
+    .callout .label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
+    .table-scroll{overflow-x:auto;margin:0 0 1.25rem;-webkit-overflow-scrolling:touch}
+    table{border-collapse:collapse;width:100%;min-width:28rem;font-size:.93rem;background:var(--surface);
+      border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+    th{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+    tr:last-child td{border-bottom:none}
+    .contact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:1.5rem;margin:3rem 0 0}
+    .contact p{margin:0 0 .5rem}
+    .contact a{font-weight:700;font-size:1.05rem;text-decoration:none;
+      border-bottom:2px solid var(--accent);padding-bottom:1px}
+    footer.page{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.82rem;
+      color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;justify-content:space-between}
+    footer.page a{color:var(--ink-soft);text-decoration:none}
+    footer.page a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <p class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> KetoChef</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 29 August 2026</p>
+    <p class="lede">What data the KetoChef app collects, why it is collected, who it is shared with, and how to delete it.</p>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+        <li><a href="#s1">Who we are</a></li>
+        <li><a href="#s2">What we collect</a></li>
+        <li><a href="#s3">Why we process it</a></li>
+        <li><a href="#s4">Who we share it with</a></li>
+        <li><a href="#s5">Where it is stored, and for how long</a></li>
+        <li><a href="#s6">Your rights</a></li>
+        <li><a href="#s7">Tracking permission</a></li>
+        <li><a href="#s8">Children</a></li>
+        <li><a href="#s9">Security</a></li>
+        <li><a href="#s10">Changes to this policy</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="s1">
+      <h2 class="section"><span class="num">01</span>Who we are</h2>
+      <p>KetoChef — <a href="mailto:mehmetozay94@gmail.com">mehmetozay94@gmail.com</a></p>
+    </section>
+
+    <section id="s2">
+      <h2 class="section"><span class="num">02</span>What we collect</h2>
+      <h3>Account information</h3>
+      <p>When you sign in with Apple or Google: your <strong>name, email address and profile photo URL</strong>. If you choose to hide your email when signing in with Apple, we only receive Apple&rsquo;s private relay address.</p>
+
+      <h3>Information you enter</h3>
+      <ul>
+        <li>Age, sex, height, weight, activity level and goal</li>
+        <li>Dietary preferences, allergies and ingredients you avoid</li>
+        <li>Cuisines you like</li>
+        <li>Meals you log, water intake and weigh-ins</li>
+        <li>Pantry items and shopping list</li>
+        <li>Favourites, cooking history and recipe ratings</li>
+      </ul>
+
+      <h3>Photographs</h3>
+      <p>When you photograph a label, your fridge or your plate, the image is processed <strong>only in order to recognise it</strong>. Photographs are not stored on our servers; they are discarded once processing finishes. The resulting text and nutrition values are saved to your account.</p>
+
+      <h3>Automatically collected</h3>
+      <p>Device type, operating system version, app version, language and region settings, crash reports and basic usage events.</p>
+
+      <div class="callout">
+        <span class="label">What we never collect</span>
+        <p>Your location, contacts, Health app data and payment details <strong>never</strong> reach us. Payments are handled entirely by Apple; we do not see your card details.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2 class="section"><span class="num">03</span>Why we process it</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Purpose</th><th>Data used</th></tr></thead>
+          <tbody>
+            <tr><td>Calculate your personal calorie and macro targets</td><td>Age, sex, height, weight, activity level</td></tr>
+            <tr><td>Show recipes that suit you and hide those that do not</td><td>Preferences, allergies, favourite cuisines</td></tr>
+            <tr><td>Track your progress</td><td>Meal, water and weight records</td></tr>
+            <tr><td>Recognise products and meals from photos</td><td>The image you capture</td></tr>
+            <tr><td>Carry your data between devices</td><td>Account information</td></tr>
+            <tr><td>Manage your subscription</td><td>Purchase status</td></tr>
+            <tr><td>Find and fix faults</td><td>Crash and usage records</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Legal bases: performance of a contract (providing the service) and legitimate interests (fixing faults, preventing abuse). Information that constitutes health data — weight, height, goals — is processed <strong>with your consent</strong>; deleting your account withdraws that consent.</p>
+    </section>
+
+    <section id="s4">
+      <h2 class="section"><span class="num">04</span>Who we share it with</h2>
+      <p>We do not sell your data. To operate the service we use:</p>
+      <ul>
+        <li><strong>Google Firebase</strong> — authentication, database, file storage, server functions. European Union servers.</li>
+        <li><strong>Google Gemini API</strong> — recipe generation and image recognition. Content sent is not used to train the model.</li>
+        <li><strong>RevenueCat</strong> — subscription state management.</li>
+        <li><strong>Apple</strong> — payments and authentication.</li>
+      </ul>
+      <p>We may also disclose data to competent authorities where legally required.</p>
+    </section>
+
+    <section id="s5">
+      <h2 class="section"><span class="num">05</span>Where it is stored, and for how long</h2>
+      <p>Data is held on servers within the European Union.</p>
+      <p>Your data is retained while your account is open. When you delete your account, all your personal data is <strong>permanently erased</strong> from our servers. Recipes you published remain in the catalogue but are unlinked from you (anonymised).</p>
+      <p>Crash and usage records are kept for at most 14 months.</p>
+    </section>
+
+    <section id="s6">
+      <h2 class="section"><span class="num">06</span>Your rights</h2>
+      <ul>
+        <li>Access your data</li>
+        <li>Ask for it to be corrected</li>
+        <li>Ask for it to be deleted</li>
+        <li>Object to processing</li>
+        <li>Receive a copy of your data</li>
+      </ul>
+      <p>You can delete your data yourself from within the App: <strong>Profile &rsaquo; Account &rsaquo; Delete account</strong>. For anything else, write to <a href="mailto:mehmetozay94@gmail.com">mehmetozay94@gmail.com</a>; we respond within 30 days at the latest.</p>
+    </section>
+
+    <section id="s7">
+      <h2 class="section"><span class="num">07</span>Tracking permission</h2>
+      <div class="callout">
+        <span class="label">Your choice</span>
+        <p><strong>Declining does not disable any feature of the App.</strong></p>
+      </div>
+      <p>The App asks for tracking permission on first launch. If you allow it, we use which recipes you open and cook to improve the quality of recommendations.</p>
+      <p>You can change this at any time in <strong>Settings &rsaquo; Privacy &amp; Security &rsaquo; Tracking</strong>, or from <strong>Profile &rsaquo; Preferences &rsaquo; Personalised recommendations</strong> inside the App.</p>
+    </section>
+
+    <section id="s8">
+      <h2 class="section"><span class="num">08</span>Children</h2>
+      <p>The App is not directed at anyone under 16 and we do not knowingly collect data from that age group. If we become aware of such data, we delete it.</p>
+    </section>
+
+    <section id="s9">
+      <h2 class="section"><span class="num">09</span>Security</h2>
+      <p>Data is encrypted in transit and at rest. Access is limited to the smallest number of people needed to run the service. No system is completely secure, however; in the event of a breach we will notify affected users and the competent authorities within the legally required timeframes.</p>
+    </section>
+
+    <section id="s10">
+      <h2 class="section"><span class="num">10</span>Changes to this policy</h2>
+      <p>We may update this policy. We will notify you in the App of significant changes. The date at the top of this page shows the most recent update.</p>
+    </section>
+  </main>
+
+  <div class="contact">
+    <p><strong>Questions?</strong> Write to us and we will get back to you.</p>
+    <p><a href="mailto:mehmetozay94@gmail.com">mehmetozay94@gmail.com</a></p>
+  </div>
+
+  <footer class="page">
+    <span>&copy; 2026 KetoChef</span>
+    <a href="terms-of-use.html">Terms of Use</a>
+  </footer>
+</div>
+</body>
+</html>
