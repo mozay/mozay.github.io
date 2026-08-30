@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KetoChef — Support &amp; Help</title>
+<meta name="description" content="Help, contact and answers for KetoChef: scan your fridge, snap your plate, check any label, and cook from 5,000+ keto recipes.">
+<meta name="theme-color" content="#F7F4EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta property="og:title" content="KetoChef — Support">
+<meta property="og:description" content="Help and contact for the KetoChef keto recipe app.">
+<meta property="og:image" content="assets/shot-1.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light dark;--bg:#F7F4EC;--surface:#FFFDF8;--ink:#14170F;--ink-soft:#5F6355;
+    --ink-faint:#969A8B;--accent:#1F7A3D;--accent-soft:#E5EFE2;--amber:#C8811F;--amber-soft:#F7EEDC;
+    --line:#E4DFD1;--radius:18px;--measure:34rem;--shadow:0 18px 40px -24px rgba(20,23,15,.45)}
+  @media (prefers-color-scheme:dark){:root{--bg:#0B0B0B;--surface:#161616;--ink:#F2F2F0;--ink-soft:#A3A3A0;
+    --ink-faint:#6B6B68;--accent:#58C983;--accent-soft:#16261B;--amber:#E8A33D;--amber-soft:#2C2211;
+    --line:#262626;--shadow:0 18px 44px -24px rgba(0,0,0,.85)}}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+  a{color:var(--accent)}
+
+  /* ---------- Top bar ---------- */
+  .topbar{position:sticky;top:0;z-index:20;backdrop-filter:saturate(140%) blur(12px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid transparent;
+    transition:border-color .2s}
+  .topbar.stuck{border-bottom-color:var(--line)}
+  .topbar .inner{max-width:60rem;margin:0 auto;padding:.7rem 1.5rem;display:flex;
+    align-items:center;gap:1.5rem}
+  .topbar .mark{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink);
+    font-weight:800;font-size:.95rem;letter-spacing:-.01em}
+  .topbar .mark img{width:1.75rem;height:1.75rem;border-radius:.5rem}
+  .topbar nav{margin-left:auto;display:flex;gap:1.3rem;align-items:center}
+  /* `:not(.btn)` ŞART: bu kural `.btn-primary`den daha belirgin olduğu
+     için indirme düğmesinin yazısını da griye çeviriyordu — yeşil zemin
+     üstünde gri yazı okunmuyordu. */
+  .topbar nav a:not(.btn){text-decoration:none;color:var(--ink-soft);font-size:.88rem;font-weight:600}
+  .topbar nav a:not(.btn):hover{color:var(--accent)}
+  .topbar .btn{padding:.5rem 1.05rem;font-size:.85rem}
+  @media (max-width:44rem){.topbar nav a.hide-sm{display:none}}
+
+  /* ---------- Steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+  @media (max-width:44rem){.steps{grid-template-columns:1fr}}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.5rem 1.4rem;position:relative}
+  .step .n{font-family:Fraunces,Georgia,serif;font-size:2.4rem;font-weight:800;line-height:1;
+    color:var(--accent);opacity:.28;margin:0 0 .5rem}
+  .step h3{font-size:1.02rem;font-weight:800;margin:0 0 .4rem}
+  .step p{margin:0;font-size:.93rem;color:var(--ink-soft);line-height:1.55}
+  .steps-art{display:block;margin:2.4rem auto 0;width:min(70%,15rem);height:auto}
+
+  /* ---------- Pro ---------- */
+  .pro{display:grid;grid-template-columns:1fr 15rem;gap:2.5rem;align-items:center;
+    background:linear-gradient(150deg,var(--accent-soft),transparent 70%);
+    border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);padding:2.2rem 2.4rem}
+  @media (max-width:46rem){.pro{grid-template-columns:1fr;text-align:center;padding:1.8rem 1.4rem}}
+  .pro img{width:100%;height:auto;justify-self:center;max-width:13rem}
+  .plan-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.55rem;max-width:var(--measure)}
+  @media (max-width:46rem){.plan-list{margin-left:auto;margin-right:auto;text-align:left}}
+  .plan-list li{display:flex;gap:.65rem;align-items:flex-start;font-size:.95rem;color:var(--ink-soft)}
+  .plan-list .tick{color:var(--accent);font-weight:800;flex:none;line-height:1.5}
+
+  /* ---------- Languages ---------- */
+  .langs{display:flex;flex-wrap:wrap;gap:.5rem}
+  .langs span{font-size:.85rem;font-weight:600;color:var(--ink-soft);background:var(--surface);
+    border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:3.5rem 0 3rem;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-30% -20% auto 40%;height:34rem;
+    background:radial-gradient(closest-side,var(--accent) 0%,transparent 100%);opacity:.16;
+    filter:blur(30px);pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+  @media (max-width:46rem){.hero-grid{grid-template-columns:1fr;gap:1.5rem;text-align:center}}
+  .brand{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.2rem}
+  .brand img{width:2.1rem;height:2.1rem;border-radius:.6rem}
+  .brand span{font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  h1{font-family:Fraunces,"Iowan Old Style",Georgia,"Times New Roman",serif;font-weight:800;
+    font-size:clamp(2.2rem,6.5vw,3.4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1rem}
+  .lede{margin:0 0 1.8rem;font-size:1.08rem;color:var(--ink-soft);max-width:var(--measure)}
+  @media (max-width:46rem){.lede{margin-left:auto;margin-right:auto}}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+  @media (max-width:46rem){.cta-row{justify-content:center}}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font-weight:700;
+    font-size:.95rem;border-radius:999px;padding:.8rem 1.5rem;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
+  @media (prefers-color-scheme:dark){.btn-primary{color:#062011}}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+  .hero-art{justify-self:center}
+  .hero-art img{width:min(100%,20rem);height:auto;display:block;
+    filter:drop-shadow(0 24px 34px rgba(31,122,61,.28))}
+
+  /* ---------- Sections ---------- */
+  section{padding:3.5rem 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,"Iowan Old Style",Georgia,serif;font-weight:700;
+    font-size:clamp(1.5rem,3.6vw,2rem);letter-spacing:-.01em;line-height:1.2;margin:0 0 .6rem}
+  .sub{color:var(--ink-soft);margin:0 0 2rem;max-width:var(--measure)}
+  .eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .7rem}
+
+  /* ---------- Features ---------- */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+  .feature{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.35rem 1.4rem}
+  .feature .ico{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:.8rem;
+    background:var(--accent-soft);margin:0 0 .85rem;font-size:1.15rem}
+  .feature h3{font-size:1rem;font-weight:800;margin:0 0 .35rem}
+  .feature p{margin:0;font-size:.92rem;color:var(--ink-soft);line-height:1.55}
+
+  /* ---------- Screenshots ---------- */
+  .shots{display:flex;gap:1rem;overflow-x:auto;padding:.5rem .25rem 1.25rem;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .shots img{flex:none;width:15rem;height:auto;border-radius:1.4rem;border:1px solid var(--line);
+    scroll-snap-align:center;box-shadow:var(--shadow)}
+  .shots::-webkit-scrollbar{height:8px}
+  .shots::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+
+  /* ---------- Support ---------- */
+  .support{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:2rem 2.2rem}
+  @media (max-width:46rem){.support{grid-template-columns:1fr;text-align:center;padding:1.8rem 1.4rem}}
+  .support img{width:9rem;height:auto;justify-self:center}
+  .mail{font-family:Fraunces,Georgia,serif;font-size:1.15rem;font-weight:700;word-break:break-all}
+
+  /* ---------- FAQ ---------- */
+  details{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.05rem 1.3rem;margin:0 0 .7rem}
+  details[open]{border-color:var(--accent)}
+  summary{cursor:pointer;font-weight:700;font-size:.98rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;font-weight:700;color:var(--accent);flex:none;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin:.85rem 0 0;font-size:.94rem;color:var(--ink-soft);max-width:var(--measure)}
+  details p:last-child{margin-bottom:0}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:2.5rem 0 3.5rem;font-size:.9rem;color:var(--ink-faint)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.25rem;margin:0 0 1rem}
+  .foot-links a{text-decoration:none}
+  .foot-links a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <div class="inner">
+    <a class="mark" href="#top">
+      <img src="assets/logo.webp" alt="" width="160" height="160">
+      KetoChef
+    </a>
+    <nav>
+      <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#screens">Screenshots</a>
+      <a href="#faq">FAQ</a>
+      <a href="#support">Support</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6804996551">Get&nbsp;the&nbsp;app</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="brand">
+        <img src="assets/logo.webp" alt="" width="160" height="160">
+        <span>KetoChef</span>
+      </p>
+      <h1>Keto, without the guesswork.</h1>
+      <p class="lede">
+        Point your camera at your fridge, your plate, or any product label — KetoChef
+        reads it, does the carb maths, and hands you something to cook from
+        5,000+ keto recipes.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6804996551">
+          Download on the App&nbsp;Store
+        </a>
+        <a class="btn btn-ghost" href="#support">Get help</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/chef-panda.webp" alt="The KetoChef panda mascot in a chef's hat" width="760" height="695">
+    </div>
+  </div>
+</header>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Three photos, no data entry</h2>
+    <p class="sub">Most keto apps ask you to type every gram. This one looks instead.</p>
+
+    <div class="steps">
+      <div class="step">
+        <p class="n">1</p>
+        <h3>Photograph your kitchen</h3>
+        <p>A fridge shelf, a cupboard, a bag of shopping. Everything recognisable lands in
+          your pantry with its carb count attached.</p>
+      </div>
+      <div class="step">
+        <p class="n">2</p>
+        <h3>Get a recipe you can cook now</h3>
+        <p>Pantry Chef reads what you actually have and writes a keto recipe around it —
+          or pick one of 5,000+ from the catalogue.</p>
+      </div>
+      <div class="step">
+        <p class="n">3</p>
+        <h3>Snap the plate when you eat</h3>
+        <p>One photo logs the dish, the portion and the macros. Your net carb budget updates
+          without you counting anything.</p>
+      </div>
+    </div>
+
+    <img class="steps-art" src="assets/scan-panda.webp" alt="" width="760" height="608" loading="lazy">
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <p class="eyebrow">What it does</p>
+    <h2>Everything you need to stay in ketosis</h2>
+    <p class="sub">Built around the three questions that come up every day: what's in my kitchen,
+      what am I eating, and can I have this?</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="ico">📸</div>
+        <h3>Scan your fridge</h3>
+        <p>Photograph a shelf or a counter. Every ingredient is recognised and added to your
+          pantry — no typing.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🍽️</div>
+        <h3>Snap your plate</h3>
+        <p>One photo of a meal returns the dishes, the portions, and the calories and macros,
+          logged to your day.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🏷️</div>
+        <h3>Check any label</h3>
+        <p>In a shop, photograph the nutrition panel. You get a straight yes or no, the net
+          carbs, and the reason.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🥑</div>
+        <h3>5,000+ keto recipes</h3>
+        <p>Filtered by net carbs, cuisine, allergens and time, each with step-by-step cook mode
+          and a timer.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🧑‍🍳</div>
+        <h3>Cook from what you have</h3>
+        <p>Pantry Chef builds a keto recipe out of the ingredients already in your kitchen,
+          instead of sending you shopping.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🗓️</div>
+        <h3>Weekly plan &amp; shopping list</h3>
+        <p>Drop recipes onto days, get a combined shopping list, and see the week's carbs
+          before you cook it.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">📊</div>
+        <h3>Net carbs and macros</h3>
+        <p>A daily budget you can actually read, plus water, electrolytes and weight — the
+          things that make keto feel fine.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">❤️</div>
+        <h3>Apple Health</h3>
+        <p>Steps, active energy and weight sync both ways, so your day adds up across every
+          app you already use.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🌍</div>
+        <h3>20 languages</h3>
+        <p>Recipes, ingredients and the whole interface — including the AI answers — in your
+          own language.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <p class="eyebrow">A look inside</p>
+    <h2>The app</h2>
+    <p class="sub">Swipe to browse.</p>
+  </div>
+  <div class="wrap">
+    <div class="shots">
+      <img src="assets/shot-1.jpg" alt="KetoChef home screen with today's carb budget" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-2.jpg" alt="Scanning the inside of a fridge" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-3.jpg" alt="Photographing a plate to log macros" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-4.jpg" alt="Checking a product label for keto suitability" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-5.jpg" alt="Browsing the keto recipe catalogue" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-6.jpg" alt="Recipes grouped by cuisine" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-7.jpg" alt="The pantry screen" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-8.jpg" alt="Daily tracking: carbs, water and steps" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-9.jpg" alt="The weekly meal plan" width="620" height="1342" loading="lazy">
+      <img src="assets/shot-10.jpg" alt="KetoChef Pro" width="620" height="1342" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="pro">
+  <div class="wrap">
+    <p class="eyebrow">Free and Pro</p>
+    <h2>Most of it is free</h2>
+    <p class="sub">The catalogue, the weekly plan and the tracking are open to everyone.
+      Pro lifts the limits on the parts that call our AI.</p>
+
+    <div class="pro">
+      <div>
+        <h3 style="font-family:Fraunces,Georgia,serif;font-size:1.3rem;margin:0 0 .2rem">KetoChef Pro</h3>
+        <p style="margin:0;color:var(--ink-soft);font-size:.95rem">
+          Weekly, monthly and yearly plans, each starting with a free trial. Prices are shown
+          in your own currency inside the app.
+        </p>
+        <ul class="plan-list">
+          <li><span class="tick">✓</span><span><strong>Unlimited AI</strong> — scan the fridge, the plate and every label as often as you like</span></li>
+          <li><span class="tick">✓</span><span><strong>Every recipe</strong>, with full cooking steps and no daily cap</span></li>
+          <li><span class="tick">✓</span><span><strong>Complete tracking</strong> — macros, water, electrolytes, weight and Apple Health</span></li>
+          <li><span class="tick">✓</span><span>Cancel any time from the App Store; the trial charges nothing if you cancel first</span></li>
+        </ul>
+        <p style="margin:1.3rem 0 0;font-size:.88rem;color:var(--ink-faint)">
+          Free accounts get four full recipes a day, the weekly meal plan, all tracking, and
+          three tries of each AI scan.
+        </p>
+      </div>
+      <img src="assets/pro-panda.webp" alt="" width="640" height="640" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="languages">
+  <div class="wrap">
+    <p class="eyebrow">Worldwide</p>
+    <h2>In your language</h2>
+    <p class="sub">Not just the buttons — recipes, ingredient names, cooking steps and the AI's
+      answers are all written in the language you pick.</p>
+    <div class="langs">
+      <span>English</span><span>Türkçe</span><span>Deutsch</span><span>Español</span>
+      <span>Français</span><span>Italiano</span><span>日本語</span><span>Português</span>
+      <span>Nederlands</span><span>Svenska</span><span>Dansk</span><span>Norsk</span>
+      <span>Suomi</span><span>Polski</span><span>Čeština</span><span>Magyar</span>
+      <span>Ελληνικά</span><span>Русский</span><span>한국어</span><span>简体中文</span>
+    </div>
+  </div>
+</section>
+
+<section id="support">
+  <div class="wrap">
+    <p class="eyebrow">Support</p>
+    <h2>Something not working?</h2>
+    <p class="sub">Write to us and a person will answer. Please include your device model,
+      your iOS version, and what you were doing when it went wrong — it usually saves a
+      round of questions.</p>
+
+    <div class="support">
+      <div>
+        <p style="margin:0 0 .35rem;color:var(--ink-soft);font-size:.9rem">Email us at</p>
+        <p class="mail" style="margin:0 0 1.2rem"><a href="mailto:mehmetozay94@gmail.com?subject=KetoChef%20Support" style="color:inherit">mehmetozay94@gmail.com</a></p>
+        <a class="btn btn-primary" href="mailto:mehmetozay94@gmail.com?subject=KetoChef%20Support">
+          Contact support
+        </a>
+      </div>
+      <img src="assets/scan-panda.webp" alt="" width="760" height="608" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <p class="eyebrow">Your data</p>
+    <h2>What we keep, and what we don't</h2>
+    <p class="sub">Short version: your food, not your identity.</p>
+    <div class="features">
+      <div class="feature">
+        <div class="ico">🔒</div>
+        <h3>Photos aren't kept</h3>
+        <p>A scanned photo is sent for analysis and discarded. We store the result — the
+          ingredients or the macros — not the picture.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🚫</div>
+        <h3>No ad tracking</h3>
+        <p>There are no ads and no advertising identifier, so iOS never has to ask you for
+          tracking permission.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🗑️</div>
+        <h3>Delete it all, yourself</h3>
+        <p>Profile → Delete account removes your recipes, pantry, plan and logs from our
+          servers. No email to us required.</p>
+      </div>
+    </div>
+    <p style="margin:1.4rem 0 0;font-size:.92rem;color:var(--ink-soft)">
+      The full detail is in the <a href="https://mozay.github.io/keto-privacy-policy.html">Privacy Policy</a>.
+    </p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2>Quick answers</h2>
+    <p class="sub">The questions that reach us most often.</p>
+
+    <details>
+      <summary>How do I cancel my subscription?</summary>
+      <p>Subscriptions are billed by Apple, so they are cancelled in the App Store — not in
+        KetoChef. On your iPhone: <strong>Settings → your name → Subscriptions → KetoChef →
+        Cancel Subscription</strong>. You keep Pro until the end of the period you already
+        paid for.</p>
+    </details>
+
+    <details>
+      <summary>I paid but I don't have Pro.</summary>
+      <p>Open <strong>Profile → Restore purchases</strong>. Make sure you are signed in with
+        the same Apple Account you paid with, and with the same KetoChef account. If it still
+        doesn't appear, email us and we will fix it on our side.</p>
+    </details>
+
+    <details>
+      <summary>Does the free trial charge me?</summary>
+      <p>Not during the trial. Apple charges when the trial ends unless you cancel at least
+        24 hours before. The trial is offered once per Apple Account across all KetoChef
+        plans.</p>
+    </details>
+
+    <details>
+      <summary>How do I delete my account and my data?</summary>
+      <p>In the app: <strong>Profile → Delete account</strong>. This removes your recipes,
+        favourites, pantry, plan and logs from our servers. It cannot be undone, and it does
+        not cancel a subscription — cancel that in the App Store first.</p>
+    </details>
+
+    <details>
+      <summary>Does it work without an internet connection?</summary>
+      <p>Recipes you have opened recently are cached and stay readable offline, including cook
+        mode. Anything that uses the camera or AI — fridge scans, plate scans, label checks —
+        needs a connection, because the analysis happens on our servers.</p>
+    </details>
+
+    <details>
+      <summary>How accurate are the nutrition numbers?</summary>
+      <p>They are estimates. Photo recognition guesses portions, and packaged foods vary by
+        country and batch. Use them to steer your day, not as a clinical measurement.</p>
+    </details>
+
+    <details>
+      <summary>Is this medical advice?</summary>
+      <p>No. KetoChef is a cooking and tracking app, not a medical device, and nothing in it
+        is a diagnosis or a treatment. If you are pregnant, taking medication — insulin and
+        blood-pressure drugs especially — or living with a chronic condition, talk to your
+        doctor before changing how you eat.</p>
+    </details>
+
+    <details>
+      <summary>The app says it is under maintenance.</summary>
+      <p>We are fixing something on our side and everyone sees that screen. Nothing you saved
+        is lost, and the app returns on its own when the work is done — you don't need to
+        reinstall it.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="https://apps.apple.com/app/id6804996551">App Store</a>
+      <a href="mailto:mehmetozay94@gmail.com?subject=KetoChef%20Support">Contact</a>
+      <a href="https://mozay.github.io/keto-privacy-policy.html">Privacy Policy</a>
+      <a href="https://mozay.github.io/keto-terms-of-use.html">Terms of Use</a>
+    </div>
+    <p style="margin:0">© 2026 KetoChef. Apple, the Apple logo and App Store are trademarks of
+      Apple Inc.</p>
+  </div>
+</footer>
+
+<script>
+  // Üst çubuk yalnızca sayfa kaydırıldığında alt çizgi kazanıyor.
+  // En üstteyken çizgi, kahraman bölümünün üstüne çizilmiş gereksiz bir
+  // ayraç gibi duruyordu.
+  (function () {
+    var bar = document.getElementById('topbar');
+    if (!bar) return;
+    var onScroll = function () { bar.classList.toggle('stuck', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+</body>
+</html>
