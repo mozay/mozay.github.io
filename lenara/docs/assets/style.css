@@ -70,3 +70,52 @@ th { color: #9287AB; font-weight: 500; }
   border-top: 1px solid var(--line); margin-top: 60px; padding-top: 22px;
   color: #7E7398; font-size: 13.5px;
 }
+
+/* --- Tanıtım sitesi --- */
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+.lead {
+  display: grid; gap: 44px; align-items: center; padding: 60px 0 30px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) { .lead { grid-template-columns: 1.05fr .95fr; } }
+.lead img { width: 100%; max-width: 380px; border-radius: 28px; justify-self: center;
+            box-shadow: 0 26px 70px rgba(0,0,0,.55); }
+.lead h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.15; margin: 0 0 14px; }
+.lead p { font-size: 18px; max-width: 46ch; }
+
+.pill {
+  display: inline-block; font-size: 12.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--glow);
+  border: 1px solid rgba(252,240,216,.28); border-radius: 999px;
+  padding: 5px 13px; margin-bottom: 18px;
+}
+
+.numbers { display: flex; flex-wrap: wrap; gap: 34px; margin: 34px 0 8px; }
+.numbers div strong { display: block; font-size: 27px; color: var(--glow); line-height: 1.2; }
+.numbers div span { font-size: 13.5px; color: #9287AB; }
+
+/* Ekran şeridi: yatay kaydırılıyor, küçük ekranda da sığıyor. */
+.shots {
+  display: flex; gap: 20px; overflow-x: auto; padding: 26px 22px 30px;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+}
+.shots::-webkit-scrollbar { height: 6px; }
+.shots::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.shot { flex: 0 0 auto; width: 236px; scroll-snap-align: center; }
+.shot img {
+  width: 100%; border-radius: 26px; display: block;
+  border: 1px solid rgba(180,165,220,.16);
+  box-shadow: 0 18px 44px rgba(0,0,0,.5);
+}
+.shot span { display: block; margin-top: 11px; font-size: 13.5px; color: #9287AB; text-align: center; }
+
+.band { border-top: 1px solid var(--line); padding: 54px 0; }
+.band h2 { margin-top: 0; font-size: 24px; }
+
+.cta {
+  display: inline-block; margin-top: 8px; padding: 13px 26px; border-radius: 999px;
+  background: var(--glow); color: #14122A; font-weight: 620; font-size: 15.5px;
+}
+.cta:hover { text-decoration: none; opacity: .92; }
