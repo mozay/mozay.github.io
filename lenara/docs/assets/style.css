@@ -1,0 +1,72 @@
+/* Lenara belgeleri — tek stil dosyası.
+   Sayfalar dörde çıktı ve stili her birine kopyalamak, birinde renk
+   değiştirip diğerlerini unutmak demekti. */
+:root {
+  color-scheme: dark;
+  --night-deep: #0C0C18;
+  --night: #14122A;
+  --surface: #1B1832;
+  --line: #322B4F;
+  --text: #ECE6F6;
+  --text-soft: #A79CBE;
+  --violet: #C0A8E4;
+  --glow: #FCF0D8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--night-deep); color: var(--text);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--violet); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Üst şerit: her sayfada aynı, nerede olduğun belli olsun diye. */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(12,12,24,.86); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.bar-inner {
+  max-width: 940px; margin: 0 auto; padding: 13px 22px;
+  display: flex; align-items: center; gap: 20px;
+}
+.brand { font-weight: 650; letter-spacing: -.02em; color: var(--text); font-size: 17px; }
+.bar nav { display: flex; gap: 18px; margin-left: auto; font-size: 14.5px; }
+.bar nav a { color: #9287AB; }
+.bar nav a.on { color: var(--glow); }
+
+main { max-width: 720px; margin: 0 auto; padding: 44px 22px 110px; }
+main.wide { max-width: 940px; }
+
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -.025em; }
+h2 { font-size: 19px; margin: 40px 0 10px; letter-spacing: -.01em; }
+h3 { font-size: 16px; margin: 26px 0 8px; color: var(--glow); }
+p, li { color: #C9C2DC; }
+.date { color: #9287AB; font-size: 13.5px; margin: 0 0 34px; }
+ul, ol { padding-left: 20px; }
+li { margin: 5px 0; }
+
+.lede { font-size: 17.5px; color: #D6D0E6; }
+
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14.5px; }
+th, td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: #9287AB; font-weight: 500; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 16px; padding: 20px 22px; margin: 18px 0;
+}
+.card h3 { margin-top: 0; }
+
+.hero { text-align: center; padding: 30px 0 10px; }
+.hero img { width: 210px; border-radius: 26px; box-shadow: 0 22px 60px rgba(0,0,0,.55); }
+.hero h1 { margin-top: 26px; font-size: 34px; }
+.hero p { font-size: 17.5px; max-width: 520px; margin: 10px auto 0; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin: 26px 0; }
+
+.foot {
+  border-top: 1px solid var(--line); margin-top: 60px; padding-top: 22px;
+  color: #7E7398; font-size: 13.5px;
+}
