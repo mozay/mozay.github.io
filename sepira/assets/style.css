@@ -1,0 +1,121 @@
+/* Fix Photo AI belgeleri — tek stil dosyası.
+   Sayfalar dörde çıktı ve stili her birine kopyalamak, birinde renk
+   değiştirip diğerlerini unutmak demekti. */
+:root {
+  color-scheme: dark;
+  --night-deep: #0B0A14;
+  --night: #14122A;
+  --surface: #1B1832;
+  --line: #322B4F;
+  --text: #ECE6F6;
+  --text-soft: #A79CBE;
+  --violet: #B49BE8;
+  --glow: #FCF0D8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--night-deep); color: var(--text);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--violet); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Üst şerit: her sayfada aynı, nerede olduğun belli olsun diye. */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(12,12,24,.86); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.bar-inner {
+  max-width: 940px; margin: 0 auto; padding: 13px 22px;
+  display: flex; align-items: center; gap: 20px;
+}
+.brand { font-weight: 650; letter-spacing: -.02em; color: var(--text); font-size: 17px; }
+.bar nav { display: flex; gap: 18px; margin-left: auto; font-size: 14.5px; }
+.bar nav a { color: #9287AB; }
+.bar nav a.on { color: var(--glow); }
+
+main { max-width: 720px; margin: 0 auto; padding: 44px 22px 110px; }
+main.wide { max-width: 940px; }
+
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -.025em; }
+h2 { font-size: 19px; margin: 40px 0 10px; letter-spacing: -.01em; }
+h3 { font-size: 16px; margin: 26px 0 8px; color: var(--glow); }
+p, li { color: #C9C2DC; }
+.date { color: #9287AB; font-size: 13.5px; margin: 0 0 34px; }
+ul, ol { padding-left: 20px; }
+li { margin: 5px 0; }
+
+.lede { font-size: 17.5px; color: #D6D0E6; }
+
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14.5px; }
+th, td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: #9287AB; font-weight: 500; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 16px; padding: 20px 22px; margin: 18px 0;
+}
+.card h3 { margin-top: 0; }
+
+.hero { text-align: center; padding: 30px 0 10px; }
+.hero img { width: 210px; border-radius: 26px; box-shadow: 0 22px 60px rgba(0,0,0,.55); }
+.hero h1 { margin-top: 26px; font-size: 34px; }
+.hero p { font-size: 17.5px; max-width: 520px; margin: 10px auto 0; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin: 26px 0; }
+
+.foot {
+  border-top: 1px solid var(--line); margin-top: 60px; padding-top: 22px;
+  color: #7E7398; font-size: 13.5px;
+}
+
+/* --- Tanıtım sitesi --- */
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+.lead {
+  display: grid; gap: 44px; align-items: center; padding: 60px 0 30px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) { .lead { grid-template-columns: 1.05fr .95fr; } }
+.lead img { width: 100%; max-width: 380px; border-radius: 28px; justify-self: center;
+            box-shadow: 0 26px 70px rgba(0,0,0,.55); }
+.lead h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.15; margin: 0 0 14px; }
+.lead p { font-size: 18px; max-width: 46ch; }
+
+.pill {
+  display: inline-block; font-size: 12.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--glow);
+  border: 1px solid rgba(252,240,216,.28); border-radius: 999px;
+  padding: 5px 13px; margin-bottom: 18px;
+}
+
+.numbers { display: flex; flex-wrap: wrap; gap: 34px; margin: 34px 0 8px; }
+.numbers div strong { display: block; font-size: 27px; color: var(--glow); line-height: 1.2; }
+.numbers div span { font-size: 13.5px; color: #9287AB; }
+
+/* Ekran şeridi: yatay kaydırılıyor, küçük ekranda da sığıyor. */
+.shots {
+  display: flex; gap: 20px; overflow-x: auto; padding: 26px 22px 30px;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+}
+.shots::-webkit-scrollbar { height: 6px; }
+.shots::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.shot { flex: 0 0 auto; width: 236px; scroll-snap-align: center; }
+.shot img {
+  width: 100%; border-radius: 26px; display: block;
+  border: 1px solid rgba(180,165,220,.16);
+  box-shadow: 0 18px 44px rgba(0,0,0,.5);
+}
+.shot span { display: block; margin-top: 11px; font-size: 13.5px; color: #9287AB; text-align: center; }
+
+.band { border-top: 1px solid var(--line); padding: 54px 0; }
+.band h2 { margin-top: 0; font-size: 24px; }
+
+.cta {
+  display: inline-block; margin-top: 8px; padding: 13px 26px; border-radius: 999px;
+  background: var(--glow); color: #14122A; font-weight: 620; font-size: 15.5px;
+}
+.cta:hover { text-decoration: none; opacity: .92; }
