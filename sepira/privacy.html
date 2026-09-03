@@ -28,8 +28,8 @@
   <p>To repair a photograph the app has to send it to a server — the work cannot be
      done on the phone. Your photograph is uploaded to our storage, passed to an
      image processing provider, and the result is sent back to you. We do not sell
-     anything, we do not show adverts, and we do not use your photographs to train
-     any model.</p>
+     anything, we do not show adverts, we do not track you across apps or websites,
+     and we do not use your photographs to train any model.</p>
 
   <h2>Your photographs</h2>
   <p>When you restore, colourise, enhance or animate a picture, the file is uploaded
@@ -43,10 +43,14 @@
   <p>We do not look at your photographs, and they are not used to train models.</p>
 
   <h2>Your account</h2>
-  <p>The app signs you in so your history and your credits follow you. Depending on
-     how you start, this is either an anonymous account tied to the app on your
-     device, or an account with an email address. We store the account identifier
-     and, if you gave one, your email address.</p>
+  <p>The app signs you in automatically so your history and your credits follow you.
+     The account is anonymous: we do not ask for your name, your email address or
+     your phone number, and we never see your Apple ID.</p>
+  <p>To recognise you the app stores one random identifier in your iCloud Keychain.
+     It is created on your device, it contains nothing about you, and it is what
+     lets your credits survive reinstalling the app or moving to a new phone. It is
+     also how we make sure the free starting credits are given once per person
+     rather than once per installation.</p>
 
   <h2>Purchases</h2>
   <p>Payment is handled by Apple. We never see your card details. RevenueCat records
@@ -57,12 +61,33 @@
   <p>Firebase Crashlytics reports crashes so failures can be found and fixed. These
      reports contain device model, operating system version and where in the code the
      crash happened. They do not contain your photographs.</p>
+  <p>A failed restoration is also recorded here with the reason it failed. Without
+     that, a job that quietly returns nothing leaves no trace anywhere and cannot be
+     fixed.</p>
+
+  <h2>Usage measurement</h2>
+  <p>Firebase Analytics records which features are used and how long a restoration
+     takes: that a job started, which of the four tools it was, whether it finished
+     or failed, how many seconds it took, and that the credits screen was opened.</p>
+  <p>That is the whole list. Your photographs, your identifier, your location and
+     anything you type are not part of it.</p>
+  <p><strong>We do not track you and we do not use an advertising identifier.</strong>
+     The app deliberately ships the version of Firebase Analytics that has advertising
+     support removed, so the identifier is not collected even by accident. Nothing is
+     shared with data brokers or advertising networks.</p>
+
+  <h2>Abuse prevention</h2>
+  <p>Firebase App Check, using Apple's App Attest, confirms that a request really
+     comes from this app on a genuine device before our servers do the work. Each
+     restoration costs us money at the image provider, so without this check anyone
+     could run up the bill from outside the app. App Attest returns a yes-or-no
+     answer to Apple's servers; it does not identify you.</p>
 
   <h2>Who else is involved</h2>
   <ul>
     <li><strong>Apple</strong> — sign-in and payments.</li>
     <li><strong>Google Firebase</strong> — accounts, database, file storage,
-        crash reporting.</li>
+        crash reporting, usage measurement, abuse prevention.</li>
     <li><strong>fal.ai</strong> — image processing.</li>
     <li><strong>RevenueCat</strong> — credit purchases.</li>
   </ul>
