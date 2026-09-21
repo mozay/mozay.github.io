@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lenara — Sleep stories in your language</title>
+<meta name="description" content="Original sleep stories in 19 languages, 53 sleep sounds generated on your phone, a sleep plan that ends the night for you. Free on the App Store.">
+<meta property="og:title" content="Lenara — Sleep stories in your language">
+<meta property="og:description" content="1,100+ original sleep stories in 19 languages, 53 sleep sounds made on your phone, a sleep plan that ends the night for you.">
+<meta property="og:image" content="https://mozay.github.io/lenara/assets/hero-koala.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0f0b1f;--night2:#1a1332;--surface:#241a44;--text:#f2ecff;--soft:#b8acd6;--glow:#f6e7c1;--violet:#8b7bd4;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 700px at 70% -10%,#2c2058 0%,var(--night) 55%);color:var(--text);font-family:Inter,-apple-system,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;backdrop-filter:blur(16px);background:rgba(15,11,31,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:Fraunces,serif;font-size:22px;text-decoration:none}
+.brand img{width:34px;height:34px;border-radius:9px}
+nav{display:flex;gap:22px;font-size:14px}nav a{text-decoration:none;color:var(--soft)}nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--glow);color:#1a1332;font-weight:600;padding:13px 22px;border-radius:999px;text-decoration:none;font-size:15px;box-shadow:0 10px 30px rgba(246,231,193,.18)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.16);box-shadow:none}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 40px}
+.hero h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(38px,5.4vw,60px);line-height:1.05;margin:0 0 18px;letter-spacing:-.01em}
+.hero p.lead{font-size:18px;color:var(--soft);max-width:520px;margin:0 0 26px}
+.pill{display:inline-block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--glow);border:1px solid rgba(246,231,193,.3);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.numbers{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.numbers div{display:flex;flex-direction:column}.numbers strong{font-family:Fraunces,serif;font-size:30px;font-weight:600}.numbers span{color:var(--soft);font-size:13px}
+.phone{position:relative;justify-self:center}
+.phone img{width:min(340px,80vw);border-radius:36px;box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06)}
+.phone .glow{position:absolute;inset:-40px;background:radial-gradient(closest-side,rgba(139,123,212,.35),transparent 70%);z-index:-1}
+section{padding:60px 0}
+h2{font-family:Fraunces,serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);margin:0 0 10px;letter-spacing:-.01em}
+.sub{color:var(--soft);max-width:640px;margin:0 0 34px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:24px}
+.card .ic{width:40px;height:40px;border-radius:12px;background:rgba(246,231,193,.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px}
+.card h3{margin:0 0 6px;font-size:17px}.card p{margin:0;color:var(--soft);font-size:14.5px}
+.shots{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.shots img{width:100%;border-radius:22px;border:1px solid rgba(255,255,255,.07);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.sounds{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sounds div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
+.sounds b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--glow);margin-bottom:8px}
+.sounds span{display:block;color:var(--soft);font-size:13.5px;line-height:1.7}
+.langs{display:flex;flex-wrap:wrap;gap:8px}.langs span{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:7px 13px;font-size:14px}
+.pro{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,#2a1f55,#171131);border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:38px}
+.pro ul{margin:0 0 22px;padding-left:18px;color:var(--soft)}.pro li{margin:6px 0}
+.pro img{width:100%;border-radius:20px}
+.faq details{border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0}.faq summary{cursor:pointer;font-weight:600;font-size:16px}.faq p{color:var(--soft);margin:8px 0 0}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:34px 0 50px;color:var(--soft);font-size:14px}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+footer a{color:var(--soft)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:44px}.phone{order:-1}.grid{grid-template-columns:1fr 1fr}.shots{grid-template-columns:repeat(3,1fr)}.sounds{grid-template-columns:repeat(3,1fr)}.pro{grid-template-columns:1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.shots{grid-template-columns:repeat(2,1fr)}.sounds{grid-template-columns:1fr 1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="">Lenara</a>
+  <nav><a href="#stories">Stories</a><a href="#sounds">Sounds</a><a href="#plan">Sleep plan</a><a href="#pro">Pro</a><a href="docs/support.html">Support</a></nav>
+  <a class="btn" href="https://apps.apple.com/app/id6807325429">Download on the App Store</a>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <span class="pill">Sleep stories · 53 sounds · 19 languages</span>
+    <h1>Sleep stories in your own language.</h1>
+    <p class="lead">Not translated. Every story in Lenara was written and narrated in the language you listen in, with its own places, weather and nighttime rhythm. Press play, and let the night end on its own.</p>
+    <div class="cta">
+      <a class="btn" href="https://apps.apple.com/app/id6807325429">Download on the App Store</a>
+      <a class="btn ghost" href="#stories">See what's inside</a>
+    </div>
+    <div class="numbers">
+      <div><strong>1,100+</strong><span>original sleep stories</span></div>
+      <div><strong>53</strong><span>sleep sounds, made on your phone</span></div>
+      <div><strong>19</strong><span>languages, each with its own library</span></div>
+    </div>
+  </div>
+  <div class="phone"><div class="glow"></div><img src="assets/shot-01-koala.png" alt="Lenara on iPhone"></div>
+</section>
+
+<section id="stories">
+  <h2>Written for the night, in your language</h2>
+  <p class="sub">A German story walks a sandy path through the Brandenburg heath in August. A Korean one waits in a mountain temple at dawn. Nothing is translated from English; each language has its own places, its own pace. New stories arrive every week, no update needed.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">📖</div><h3>1,100+ sleep stories</h3><p>Fifteen to twenty minutes, narrated slowly and softly. Most listeners are asleep before the end.</p></div>
+    <div class="card"><div class="ic">🌙</div><h3>Series that continue</h3><p>Five-chapter stories set in one place. Each chapter ends in a pause, not a cliffhanger, so you come back tomorrow instead of staying awake.</p></div>
+    <div class="card"><div class="ic">🤫</div><h3>Whisper mode</h3><p>The same story, whispered. For nights when calm narration is still too much.</p></div>
+    <div class="card"><div class="ic">🧘</div><h3>460 guided meditations</h3><p>Falling asleep, anxiety, body scan, breathing, morning, focus, gratitude, tension. Real pauses, written per language.</p></div>
+    <div class="card"><div class="ic">📥</div><h3>Offline nights</h3><p>Download stories and sounds once, listen on a plane or with the Wi-Fi off. Background playback and lock screen controls.</p></div>
+    <div class="card"><div class="ic">❤️</div><h3>Favorites and playlists</h3><p>Save the stories and sounds that work for you. Keep a streak. Watch quiet nights add up.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="shots">
+    <img src="assets/shot-02-hikayeler.png" alt="Sleep stories">
+    <img src="assets/shot-04-doga-sesleri.png" alt="Sleep sounds">
+    <img src="assets/shot-06-zamanlayici.png" alt="Sleep plan">
+    <img src="assets/shot-07-diller.png" alt="19 languages">
+    <img src="assets/shot-01-koala.png" alt="Lenara">
+  </div>
+</section>
+
+<section id="sounds">
+  <h2>53 sleep sounds, generated on your phone</h2>
+  <p class="sub">No recordings, no loop point to notice, no data while playing. Lenara synthesizes every sound live on your device, so a night of rain never repeats itself.</p>
+  <div class="sounds">
+    <div><b>Rain</b><span>Rain · Drizzle · Downpour · Rain on a tent · Rain on leaves · Tin roof · Rain and wind · Thunderstorm · City rain at night</span></div>
+    <div><b>Nature</b><span>Forest · Night forest · Wind · Meadow · Pine forest · Blizzard · Crickets · Frogs · Morning birds</span></div>
+    <div><b>Water</b><span>Waves · Night ocean · Stream · Wide river · Waterfall · Lakeshore · Cave drip · Aquarium</span></div>
+    <div><b>Home</b><span>Fireplace · Campfire · Fan · Air conditioner · Fridge · Washer · Dishwasher · Dryer · Shower · Hair dryer · Vacuum · Keyboard · Heartbeat · Purring cat · Wall clock</span></div>
+    <div><b>Travel</b><span>Train · Subway · Car ride · Boat · Airplane cabin · Spaceship · Café · Library</span></div>
+    <div><b>Noise</b><span>Brown · Pink · White · Deep drone</span></div>
+  </div>
+</section>
+
+<section id="plan">
+  <h2>A sleep plan, not just a timer</h2>
+  <p class="sub">Choose how many stories play tonight and what follows: nothing, or fifteen minutes to a whole night of ambience picked from your favorites. The last story fades in its final half minute, then the screen dims. Lenara remembers the plan for every night after.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">1</div><h3>How many stories</h3><p>One, two, three, four, or unlimited. Repeat a single story as many times as you like.</p></div>
+    <div class="card"><div class="ic">2</div><h3>What comes after</h3><p>Rain, a night train, crickets. Picked from your favorite sounds, a different one each night.</p></div>
+    <div class="card"><div class="ic">3</div><h3>Then the night ends</h3><p>A slow fade instead of a cut. The screen darkens for a calmer nightstand.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Nineteen languages, nineteen libraries</h2>
+  <p class="sub">Pick your language once. The stories, the narration, the meditations and the app itself follow.</p>
+  <div class="langs"><span>English</span><span>Deutsch</span><span>Nederlands</span><span>Svenska</span><span>Dansk</span><span>Français</span><span>Español</span><span>Italiano</span><span>Português (BR)</span><span>Polski</span><span>Türkçe</span><span>Русский</span><span>한국어</span><span>日本語</span><span>简体中文</span><span>ภาษาไทย</span><span>Tiếng Việt</span><span>Bahasa Indonesia</span><span>हिन्दी</span></div>
+</section>
+
+<section id="pro">
+  <div class="pro">
+    <div>
+      <h2>Lenara Pro</h2>
+      <p class="sub" style="margin-bottom:16px">Free listeners get a couple of listens a day, and all 53 sounds. Pro opens the rest.</p>
+      <ul>
+        <li>The whole library, unlimited listening</li>
+        <li>Whisper mode</li>
+        <li>Offline downloads</li>
+        <li>New stories every week</li>
+        <li>Family Sharing included</li>
+      </ul>
+      <a class="btn" href="https://apps.apple.com/app/id6807325429">Try Pro free</a>
+    </div>
+    <img src="assets/hero-koala.jpg" alt="">
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Questions</h2>
+  <details><summary>Are the stories really written in each language?</summary><p>Yes. Each language has its own set of stories with its own settings; nothing is translated from an English original. The narration is recorded per language as well.</p></details>
+  <details><summary>Do the sounds use data or battery?</summary><p>No data: the sounds are synthesized on the device. Battery use is similar to playing a music file.</p></details>
+  <details><summary>Can I use it offline?</summary><p>All 53 sounds work offline. With Pro, stories and meditations can be downloaded for offline listening.</p></details>
+  <details><summary>How does the subscription work?</summary><p>Lenara Pro is an auto-renewing subscription, weekly, monthly or yearly, billed through your App Store account. Cancel anytime in your App Store settings. Family Sharing is supported.</p></details>
+  <details><summary>How do I get help?</summary><p>Write to us from the app (Profile → Contact us) or through the <a href="docs/support.html">support page</a>. Your user ID is at the bottom of the Profile screen.</p></details>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div>© 2026 Mehmet Ozay · Lenara</div>
+    <div><a href="docs/support.html">Support</a> · <a href="docs/privacy.html">Privacy Policy</a> · <a href="docs/terms.html">Terms of Use</a> · <a href="https://apps.apple.com/app/id6807325429">App Store</a></div>
+  </div>
+</div></footer>
+</body>
+</html>
