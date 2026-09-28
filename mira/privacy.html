@@ -24,7 +24,7 @@
 <main class="doc">
   <p class="eyebrow">Legal · Privacy</p>
   <h1>Privacy Policy <em>plainly written.</em></h1>
-  <p class="meta">Last updated 27 September 2026 · Applies to the mira. app for iPhone and its services</p>
+  <p class="meta">Last updated 28 September 2026 · Applies to the mira. app for iPhone and its services</p>
 
   <p class="lede">mira. is a personal stylist that works from photos of your own clothes. That
      means it looks after things you care about — your wardrobe, your photos and sometimes a
@@ -37,8 +37,8 @@
       <li>No ads, no tracking and no data brokers. Nothing is ever sold.</li>
       <li>Your wardrobe, photos, conversations and plans live in your own account on Google
           Firebase in Frankfurt and can be read only through your sign-in.</li>
-      <li>AI features send only what they need, only when you use them, to Google’s Vertex AI —
-          and, for photo-to-pieces, to fal.ai. Vertex AI may not use it to train models.</li>
+      <li>AI features send only what they need, only when you use them, to Google’s Vertex AI,
+          which may not use it to train models.</li>
       <li>Delete any piece, photo, chat or try-on whenever you like. Deleting your account in
           Profile removes everything at once.</li>
     </ul>
@@ -123,9 +123,9 @@
         <td>To deliver the reminders and news you turned on, in your language, at a sensible
             hour</td>
         <td>Consent, withdrawn in Profile → Notifications or iOS Settings</td></tr>
-    <tr><td>Support: your message, the topic, app version, device model and language when you
-            contact us</td>
-        <td>To answer you</td>
+    <tr><td>Support: your requests and any follow-up you add, the topic, app version, device
+            model and language, our answers, and whether you have seen an answer</td>
+        <td>To answer you and let you find earlier requests in the app</td>
         <td>Legitimate interest in helping you</td></tr>
     <tr><td>Security and diagnostics: an App Attest check from Apple, request times, IP address,
             error codes and technical identifiers in server logs</td>
@@ -168,18 +168,21 @@
      your account until you delete it.</p>
 
   <h3>Photo to pieces (Pro)</h3>
-  <p>When you tap <em>Separate pieces</em>, your outfit photo is sent to fal.ai in the United
-     States to outline the visible clothes, and to Google Gemini to label each piece. We ask
-     fal.ai not to store the request or its result. You review every piece before anything is
-     saved to your wardrobe.</p>
+  <p>When you tap <em>Create pieces</em>, your outfit photo is sent to Google’s Gemini models
+     through Vertex AI: in the EU to find and describe each piece you are wearing, and on
+     Google’s global image service to create a new product image of each piece and check it
+     against your photo, which may happen outside the EU. mira. does not keep the photo. The
+     product images wait privately in your account for up to a day so you can review them;
+     only the pieces you add are saved to your wardrobe, and the rest are deleted
+     automatically. Hidden parts of a piece are estimated by the AI.</p>
 
   <h3>On your iPhone</h3>
   <p>Removing the background from a wardrobe photo, suggesting its category and colours, and
      choosing your daily outfit suggestions all happen on your iPhone, not on an AI service.</p>
 
   <div class="note">
-    <p>Google Cloud and fal.ai act as our processors: they handle this data only to return a
-       result to us. Google’s Vertex AI terms do not allow it to use your data to train its
+    <p>Google Cloud acts as our processor: it handles this data only to return a result to
+       us. Google’s Vertex AI terms do not allow it to use your data to train its
        models. Providers apply safety filters, so some requests are declined; a declined
        try-on does not use a credit. Mira’s suggestions never have legal or similarly
        significant effects on you — ignore, change or reset them whenever you like.</p>
@@ -215,8 +218,10 @@
   <p>Daily outfit and plan reminders are scheduled on your iPhone. If you allow notifications,
      Firebase Cloud Messaging issues a push token; we keep it with an installation identifier,
      your language, time zone and choices so messages arrive in your language at a sensible
-     hour. Turn news or all notifications off in Profile → Notifications or in iOS Settings.
-     Signing out unlinks the token from your account.</p>
+     hour. If notifications are on, we also tell you when the mira. team has answered a support
+     request; the notification never contains the answer itself. Turn news or all notifications
+     off in Profile → Notifications or in iOS Settings. Signing out unlinks the token from your
+     account.</p>
 
   <h2 id="purchases">Memberships and purchases</h2>
   <p>Apple processes every payment; we never see card details. RevenueCat, in the United States,
@@ -235,9 +240,9 @@
         <td>Database, storage and functions in Frankfurt, Germany; sign-in, App Check and
             messaging run on Google’s global network</td></tr>
     <tr><td>Google Cloud Vertex AI</td>
-        <td>Mira chat replies, try-on images, labelling pieces</td>
-        <td>EU for chat and labelling; global for try-on images</td></tr>
-    <tr><td>fal.ai</td><td>Outlining clothes in an outfit photo (Pro)</td><td>United States</td></tr>
+        <td>Mira chat replies, try-on images, photo to pieces (finding pieces, creating and
+            checking product images)</td>
+        <td>EU for chat and finding pieces; global for try-on and product images</td></tr>
     <tr><td>RevenueCat</td><td>Subscription and purchase status</td><td>United States</td></tr>
     <tr><td>Apple</td>
         <td>Sign in with Apple, App Store payments, App Attest, WeatherKit, MapKit and
@@ -259,6 +264,10 @@
     <li><strong>Conversations</strong> — until you delete the conversation, when its messages
         and photos are removed from our servers, or your account.</li>
     <li><strong>Try-on photos and results</strong> — until you delete them or your account.</li>
+    <li><strong>Photo-to-pieces results you have not added</strong> — deleted automatically after
+        one day; the photo itself is never stored.</li>
+    <li><strong>Support requests and answers</strong> — kept with your account so we can answer
+        you and you can see earlier requests; deleted with your account.</li>
     <li><strong>Usage counters and request records</strong> — kept with your account and deleted
         with it.</li>
     <li><strong>Push tokens</strong> — until you sign out, turn notifications off or the
