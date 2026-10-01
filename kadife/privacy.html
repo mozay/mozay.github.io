@@ -132,14 +132,23 @@
         <td>To stop automated abuse of paid AI features, keep the service running and find what
             broke</td>
         <td>Legitimate interest in a secure, working service</td></tr>
+    <tr><td>App usage and reliability (from version 1.0.0 build 5): installation identifiers,
+            app and device information, general region, screen views, sessions, purchase activity,
+            feature request outcomes, crash stacks and sanitized technical error categories</td>
+        <td>Firebase Analytics helps us understand how features are used; Firebase Crashlytics
+            helps us diagnose crashes and improve reliability. We do not send your name, email,
+            account ID, photos, chat messages, calendar entries or authentication tokens as
+            analytics events or crash-report fields.</td>
+        <td>Legitimate interest in improving the app and its reliability</td></tr>
     </tbody>
   </table>
   </div>
 
   <h3>What we do not collect</h3>
   <ul>
-    <li>No advertising identifier, no ad networks, no third-party analytics or tracking SDKs and
-        no tracking across other apps or websites.</li>
+    <li>No advertising identifier, no ad networks and no tracking across other apps or websites.
+        Firebase Analytics is configured without advertising identity support; Google Ads integration
+        and advertising personalization are disabled.</li>
     <li>No contacts, microphone, health data or background location, and no calendar data on
         our servers.</li>
     <li>No access to your whole photo library. kadife. only receives the photos you pick, and
@@ -225,8 +234,8 @@
 
   <h2 id="purchases">Memberships and purchases</h2>
   <p>Apple processes every payment; we never see card details. RevenueCat, in the United States,
-     receives your anonymous kadife. account identifier and your App Store purchase records to
-     confirm and restore purchases. Our server then records your plan, its dates and your
+     receives your internal kadife. account identifier and your App Store purchase records to
+     confirm and restore purchases and analyse purchase activity. Our server then records your plan, its dates and your
      credits. Only the server can change them — not the app on your phone. Offer codes are
      redeemed on Apple’s own page.</p>
 
@@ -239,6 +248,10 @@
         <td>Sign-in, database, photo storage, server functions, App Check, Cloud Messaging</td>
         <td>Database, storage and functions in Frankfurt, Germany; sign-in, App Check and
             messaging run on Google’s global network</td></tr>
+    <tr><td>Google Analytics for Firebase and Firebase Crashlytics</td>
+        <td>App usage measurement and crash diagnostics, without advertising identifiers or
+            advertising personalization. Installation identifiers are pseudonymous, not a
+            guarantee of anonymity.</td><td>Google’s global infrastructure, including the United States</td></tr>
     <tr><td>Google Cloud Vertex AI</td>
         <td>Kadife chat replies, try-on images, photo to pieces (finding pieces, creating and
             checking product images)</td>
@@ -273,10 +286,15 @@
     <li><strong>Push tokens</strong> — until you sign out, turn notifications off or the
         installation stops checking in.</li>
     <li><strong>Server logs</strong> — up to thirty days.</li>
+    <li><strong>App usage events (Firebase Analytics)</strong> — two months; after that only
+        aggregated reports that describe no individual remain.</li>
+    <li><strong>Crash reports (Firebase Crashlytics)</strong> — ninety days.</li>
     <li><strong>After you delete your account</strong> we keep only a record of the deletion
         holding a one-way hash of the old account identifier (never your email or content), the
         keyed hash used for one-time offers, and purchase records Apple and RevenueCat must keep
-        for accounting and tax.</li>
+        for accounting and tax. App usage events and crash reports are tied to an installation
+        identifier, not to your account, so they are not deleted with it; they expire on the
+        schedule above.</li>
   </ul>
   <p>For speed, kadife. also caches your photos on your iPhone; that copy disappears when you
      delete the app.</p>
