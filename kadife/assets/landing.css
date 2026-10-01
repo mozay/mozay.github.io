@@ -1,4 +1,4 @@
-/* mira. — marketing page. The look of the App Store campaign (tools/store-kit in the app repo):
+/* kadife. — marketing page. The look of the App Store campaign (tools/store-kit in the app repo):
    lime, ink, lilac and wine panels, loud Inter headlines, the Bodoni wordmark.
    Support, privacy and terms keep their own quiet stylesheet (site.css). */
 
@@ -194,7 +194,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline
 .wardrobe .phone { left: 50%; margin-left: -110px; --tilt: 7deg; --w: 250px; }
 .wardrobe .piece.blouse { width: 210px; left: -8%; top: 0; rotate: -15deg; }
 .wardrobe .piece.heels { width: 190px; right: -5%; top: 150px; rotate: 10deg; z-index: 3; }
-/* What to wear? Ask mira. */
+/* What to wear? Ask kadife. */
 .stylist .sweep { left: -20%; top: 52%; width: 150%; height: 100%; background: var(--lilac); rotate: 24deg; }
 .stylist .phone { left: 50%; margin-left: -150px; --tilt: -5deg; --w: 300px; }
 .stylist .sticker { right: 8%; top: -6px; rotate: 6deg; border-radius: 22px 22px 6px 22px; font-size: 17px; padding: 13px 19px; }
