@@ -3,56 +3,234 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>mira. — Your wardrobe, your stylist</title>
+<title>mira. — Your wardrobe. Your style.</title>
 <meta name="description" content="mira. turns photos of the clothes you already own into outfits for your weather, your plans and your style — and shows them on you before you get dressed.">
-<meta property="og:title" content="mira. — Your wardrobe, your stylist">
-<meta property="og:description" content="Outfits from your wardrobe, for your day.">
-<meta property="og:image" content="assets/hero-office.jpg">
-<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://mozay.github.io/mira/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mozay.github.io/mira/">
+<meta property="og:title" content="mira. — Your wardrobe. Your style.">
+<meta property="og:description" content="Outfits from your wardrobe, for your day. See them on you first.">
+<meta property="og:image" content="https://mozay.github.io/mira/assets/landing/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6816054509">
+<meta name="theme-color" content="#D7F16E">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
-<script>(function(d){if(/\bMiraApp\//.test(navigator.userAgent)||/[?&]app=1\b/.test(location.search))d.documentElement.classList.add('in-app')})(document)</script>
-<link rel="stylesheet" href="assets/site.css">
+<script>(function(d){d.documentElement.classList.add('js');if(/\bMiraApp\//.test(navigator.userAgent)||/[?&]app=1\b/.test(location.search))d.documentElement.classList.add('in-app')})(document)</script>
+<link rel="preload" href="assets/fonts/Inter-Bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="assets/landing.css">
 </head>
 <body>
-<header class="bar"><div class="bar-inner">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spark" viewBox="0 0 48 48"><g stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M24 2v44M2 24h44M8.4 8.4l31.2 31.2M39.6 8.4L8.4 39.6"/></g></symbol>
+</svg>
+
+<header class="bar" id="bar"><div class="bar-inner">
   <a class="wordmark" href="./" aria-label="mira. home">mira.</a>
   <nav aria-label="Site">
+    <a class="optional" href="#features">Features</a>
+    <a class="optional" href="#film">The film</a>
     <a href="support.html">Support</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
+    <a class="pill" href="#get">Get the app</a>
   </nav>
 </div></header>
 
 <main>
-  <section class="hero">
-    <div>
-      <p class="eyebrow">Personal stylist · Digital wardrobe</p>
-      <h1>Your wardrobe, <em>your stylist.</em></h1>
-      <p class="lede">mira. turns photos of the clothes you already own into outfits for your
-         weather, your plans and your style — and shows them on you before you get dressed.</p>
-      <div class="actions">
-        <a class="button" href="support.html">Help &amp; support</a>
-        <a class="button quiet" href="privacy.html">Privacy</a>
-        <a class="button quiet" href="terms.html">Terms</a>
+  <section class="hero on-lime">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Personal stylist · Digital wardrobe</p>
+        <h1 class="shout"><span>Your</span><span>wardrobe.</span><span class="pop">Your style.</span></h1>
+        <p class="lede">mira. turns photos of the clothes you already own into outfits for your weather,
+          your plans and your style — and shows them on you before you get dressed.</p>
+        <div class="actions">
+          <a class="store" data-store href="https://apps.apple.com/app/id6816054509"><small>Coming soon to the</small><b>App Store</b></a>
+          <a class="watch" href="#film">Watch the film</a>
+        </div>
+        <ul class="facts" aria-label="Good to know">
+          <li>Free to start</li>
+          <li>40 languages</li>
+          <li>No ads. No tracking.</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sweep"></div>
+        <div class="rings"></div>
+        <span class="sticker">more possibilities</span>
+        <div class="phone float">
+          <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406">
+          <div class="screen"><img src="assets/landing/screen-home.webp" alt="" width="620" height="1348"></div>
+          <span class="island"></span>
+        </div>
+        <img class="piece bag float slow" src="assets/landing/piece-bag.webp" alt="" width="460" height="460">
+        <img class="piece pants float slow" src="assets/landing/piece-pants.webp" alt="" width="460" height="460">
+        <svg class="spark"><use href="#spark"/></svg>
       </div>
     </div>
-    <figure class="hero-art" style="margin:0">
-      <img src="assets/hero-office.jpg" width="933" height="1400"
-           alt="A woman in a linen vest and wide trousers walking past a stone building in warm evening light">
-      <figcaption>Outfits from your wardrobe, for your day.</figcaption>
-    </figure>
   </section>
 
-  <section class="features" aria-label="What mira. does">
-    <div class="feature"><span class="n">01</span><h3>Your wardrobe, digital</h3>
-      <p>Photograph your pieces. mira. clears the background and sorts them for you.</p></div>
-    <div class="feature"><span class="n">02</span><h3>Dressed for the day</h3>
-      <p>Outfits from what you own, for your city’s weather and whatever is on your plans.</p></div>
-    <div class="feature"><span class="n">03</span><h3>See it on you</h3>
-      <p>Try an outfit on a photo of yourself before you get dressed.</p></div>
-    <div class="feature"><span class="n">04</span><h3>A stylist to talk to</h3>
-      <p>Ask Mira what goes with what, what to pack, or what to wear to the interview.</p></div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <p>Every day <i>✳</i> A new chapter <i>✳</i> Your wardrobe <i>✳</i> Your world <i>✳</i> Style for every moment <i>✳</i> Fully you <i>✳</i> Dress like yourself <i>✳</i></p>
+      <p>Every day <i>✳</i> A new chapter <i>✳</i> Your wardrobe <i>✳</i> Your world <i>✳</i> Style for every moment <i>✳</i> Fully you <i>✳</i> Dress like yourself <i>✳</i></p>
+    </div>
+  </div>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow">What mira. does</p>
+          <h2>Everything you own, <em>styled for today.</em></h2>
+        </div>
+        <p class="aside">No shopping lists, no strangers’ closets. mira. works with the pieces already hanging in yours.</p>
+      </div>
+
+      <div class="tiles">
+        <article class="tile wide t-ink looks" data-reveal>
+          <div class="tile-copy">
+            <h3 class="shout"><span>Same piece.</span><span class="pop">A whole</span><span class="pop">new you.</span></h3>
+            <p class="body">Pick any piece and mira. builds new outfits around it — from what you already own.</p>
+          </div>
+          <div class="tile-art" aria-hidden="true">
+            <div class="sweep"></div>
+            <span class="sticker">Another idea</span>
+            <img class="piece float slow" src="assets/landing/piece-jacket.webp" alt="" width="460" height="460" loading="lazy">
+            <div class="phone">
+              <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406" loading="lazy">
+              <div class="screen"><img src="assets/landing/screen-looks.webp" alt="" width="620" height="1348" loading="lazy"></div>
+              <span class="island"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile narrow t-lilac tryon" data-reveal style="--delay:.08s">
+          <div class="tile-copy">
+            <h3 class="shout"><span>See it</span><span class="pop">on you.</span><span class="pop">First.</span></h3>
+            <p class="body">Your photo. Your wardrobe. A new look — before you get dressed.</p>
+          </div>
+          <div class="tile-art" aria-hidden="true">
+            <div class="sweep"></div>
+            <span class="sticker">Your fitting room</span>
+            <img class="photo" src="assets/landing/photo-tryon.webp" alt="" width="760" height="1140" loading="lazy">
+            <div class="phone">
+              <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406" loading="lazy">
+              <div class="screen"><img src="assets/landing/screen-tryon.webp" alt="" width="620" height="1348" loading="lazy"></div>
+              <span class="island"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile narrow t-lime on-lime wardrobe" data-reveal>
+          <div class="tile-copy">
+            <h3 class="shout"><span>Your wardrobe.</span><span>Now in</span><span class="pop">your pocket.</span></h3>
+            <p class="body">Photograph a piece, or a whole outfit. mira. clears the background and sorts everything for you.</p>
+          </div>
+          <div class="tile-art" aria-hidden="true">
+            <div class="sweep"></div>
+            <img class="piece blouse float slow" src="assets/landing/piece-blouse.webp" alt="" width="460" height="460" loading="lazy">
+            <div class="phone">
+              <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406" loading="lazy">
+              <div class="screen"><img src="assets/landing/screen-wardrobe.webp" alt="" width="620" height="1348" loading="lazy"></div>
+              <span class="island"></span>
+            </div>
+            <img class="piece heels float" src="assets/landing/piece-heels.webp" alt="" width="460" height="460" loading="lazy">
+          </div>
+        </article>
+
+        <article class="tile wide t-ink stylist" data-reveal style="--delay:.08s">
+          <div class="tile-copy">
+            <h3 class="shout"><span>What to wear?</span><span class="pop">Ask <span class="brand" style="display:inline">mira.</span></span></h3>
+            <p class="body">A stylist to talk to: what goes with what, what to pack, what to wear to the interview.</p>
+          </div>
+          <div class="tile-art" aria-hidden="true">
+            <div class="sweep"></div>
+            <span class="sticker">What should I wear today?</span>
+            <div class="phone">
+              <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406" loading="lazy">
+              <div class="screen"><img src="assets/landing/screen-chat.webp" alt="" width="620" height="1348" loading="lazy"></div>
+              <span class="island"></span>
+            </div>
+            <img class="piece float slow" src="assets/landing/piece-shoe.webp" alt="" width="460" height="460" loading="lazy">
+          </div>
+        </article>
+
+        <article class="tile wide t-forest planner" data-reveal>
+          <div class="tile-copy">
+            <h3 class="shout"><span>Your week.</span><span>Planned.</span><span class="pop">Styled.</span></h3>
+            <p class="body">Plan outfits around your calendar and the forecast. The look you chose is waiting in the morning.</p>
+          </div>
+          <div class="tile-art" aria-hidden="true">
+            <div class="sweep"></div>
+            <div class="phone">
+              <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406" loading="lazy">
+              <div class="screen"><img src="assets/landing/screen-planner.webp" alt="" width="620" height="1348" loading="lazy"></div>
+              <span class="island"></span>
+            </div>
+            <div class="days">
+              <div class="day">Mon<b>28</b></div>
+              <div class="day active">Tue<b>29</b></div>
+              <div class="day">Wed<b>30</b></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile narrow t-wine trip" data-reveal style="--delay:.08s">
+          <div class="tile-copy">
+            <h3 class="shout"><span>Pack less.</span><span class="pop">Wear</span><span class="pop">more.</span></h3>
+            <p class="body">Tell mira. where and when. It packs a small capsule from your wardrobe for the forecast.</p>
+          </div>
+          <div class="tile-art" aria-hidden="true">
+            <img class="photo" src="assets/landing/photo-travel.webp" alt="" width="820" height="1230" loading="lazy">
+            <span class="sticker">One suitcase, many stories</span>
+            <div class="phone">
+              <img class="frame" src="assets/landing/phone.webp" alt="" width="690" height="1406" loading="lazy">
+              <div class="screen"><img src="assets/landing/screen-trip.webp" alt="" width="620" height="1348" loading="lazy"></div>
+              <span class="island"></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="film" id="film">
+    <div class="wrap film-inner">
+      <div class="film-stage" data-reveal>
+        <div class="halo"></div>
+        <div class="film-frame">
+          <video id="film-video" src="assets/landing/film.mp4" poster="assets/landing/film-poster.webp" width="720" height="1280"
+                 muted loop playsinline preload="none" aria-label="The mira. film: outfits for every moment of the day"></video>
+        </div>
+        <button class="sound" id="film-sound" type="button" aria-pressed="false">Sound on</button>
+      </div>
+      <div class="film-copy" data-reveal style="--delay:.1s">
+        <p class="eyebrow">How it works</p>
+        <h2>Every day. <em>A new chapter.</em></h2>
+        <p>Most of us wear a small part of what we own. mira. gets to know your pieces and keeps finding
+          new ways to wear them.</p>
+        <ol class="steps">
+          <li><h3>Photograph your pieces</h3><p>One photo each is enough. Your wardrobe builds itself.</p></li>
+          <li><h3>Open it in the morning</h3><p>Outfits for your city’s weather and whatever is on your plans.</p></li>
+          <li><h3>See it on you</h3><p>Try the look on a photo of yourself, then get dressed.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing on-ink" id="get">
+    <div class="rings" aria-hidden="true"></div>
+    <svg class="spark" aria-hidden="true"><use href="#spark"/></svg>
+    <svg class="spark two" aria-hidden="true"><use href="#spark"/></svg>
+    <div class="wrap" data-reveal>
+      <h2 class="shout"><span>Get inspired.</span><span>Try it.</span><span class="pop">Be you.</span></h2>
+      <p>Free to download for iPhone. Mira Plus and Mira Pro are there if you want more try-ons and more of your stylist.</p>
+      <a class="store" data-store href="https://apps.apple.com/app/id6816054509"><small>Coming soon to the</small><b>App Store</b></a>
+    </div>
   </section>
 </main>
 
@@ -65,5 +243,56 @@
   </nav>
   <span class="made">Made by Mehmet Ozay · <a href="mailto:mehmetozay94@gmail.com">mehmetozay94@gmail.com</a></span>
 </div></footer>
+
+<script>
+(function () {
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // The bar turns solid once the page has moved under it.
+  var bar = document.getElementById('bar');
+  function stick() { bar.classList.toggle('is-stuck', scrollY > 24); }
+  addEventListener('scroll', stick, { passive: true }); stick();
+
+  // Sections rise into place as they enter the screen.
+  var revealed = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduced) {
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('is-in'); seen.unobserve(entry.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealed.forEach(function (node) { seen.observe(node); });
+  } else {
+    revealed.forEach(function (node) { node.classList.add('is-in'); });
+  }
+
+  // The film plays silently while it is on screen; sound is the visitor's choice.
+  var video = document.getElementById('film-video'), sound = document.getElementById('film-sound');
+  if (reduced) { video.controls = true; video.loop = false; sound.hidden = true; }
+  else if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { var playing = video.play(); if (playing) playing.catch(function () { video.controls = true; }); }
+      else video.pause();
+    }, { threshold: 0.35 }).observe(video);
+  }
+  sound.addEventListener('click', function () {
+    video.muted = !video.muted;
+    sound.textContent = video.muted ? 'Sound on' : 'Sound off';
+    sound.setAttribute('aria-pressed', String(!video.muted));
+    if (video.paused) video.play();
+  });
+
+  // The buttons say "coming soon" until the App Store lists the app; then they become the download link.
+  window.miraStoreListing = function (answer) {
+    if (!answer || !(answer.resultCount > 0)) return;
+    document.querySelectorAll('[data-store]').forEach(function (button) {
+      button.classList.add('is-live');
+      button.querySelector('small').textContent = 'Download on the';
+    });
+  };
+  var lookup = document.createElement('script');
+  lookup.src = 'https://itunes.apple.com/lookup?id=6816054509&callback=miraStoreListing';
+  lookup.async = true;
+  document.head.appendChild(lookup);
+})();
+</script>
 </body>
 </html>

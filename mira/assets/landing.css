@@ -1,0 +1,348 @@
+/* mira. — marketing page. The look of the App Store campaign (tools/store-kit in the app repo):
+   lime, ink, lilac and wine panels, loud Inter headlines, the Bodoni wordmark.
+   Support, privacy and terms keep their own quiet stylesheet (site.css). */
+
+@font-face { font-family: "Bodoni Moda"; src: url("fonts/BodoniModa-Regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Bodoni Moda"; src: url("fonts/BodoniModa-RegularItalic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Bodoni Moda"; src: url("fonts/BodoniModa-Medium.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Medium.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-SemiBold.woff") format("woff"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Bold.woff") format("woff"); font-weight: 800; font-style: normal; font-display: swap; }
+
+:root {
+  color-scheme: light;
+  --ink: #171b16;
+  --cream: #fffdf4;
+  --lime: #d7f16e;
+  --lime-depth: #a6bf4c;
+  --lime-stroke: #526629;
+  --olive-depth: #64742e;
+  --forest: #273925;
+  --lilac: #decff1;
+  --lilac-ink: #262033;
+  --lilac-depth: #9787ad;
+  --violet: #927fba;
+  --wine: #562137;
+  --wine-cream: #fff6e9;
+  --pink: #f4b5ce;
+  --pink-depth: #a85073;
+  --serif: "Bodoni Moda", "New York", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --gutter: 20px;
+  --page: 1200px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font: 400 17px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 6px; }
+.wrap { max-width: var(--page); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- Type ---------- */
+
+.wordmark {
+  font-family: var(--serif); font-weight: 500; font-size: 34px; line-height: 1;
+  letter-spacing: -2.2px; color: inherit; text-decoration: none; padding: 2px 0 8px;
+}
+.shout {
+  font: 800 1em/.95 var(--sans); letter-spacing: -.058em; text-transform: uppercase; margin: 0;
+  filter: drop-shadow(0 .1em .09em rgba(0, 0, 0, .16));
+}
+.shout span { display: block; }
+.shout .pop {
+  color: var(--accent);
+  text-shadow: 0 .012em var(--depth), .006em .024em var(--depth), .012em .036em var(--depth),
+    .018em .048em var(--depth), .024em .06em var(--depth), .03em .072em var(--depth), .036em .084em var(--depth);
+}
+.shout .brand { text-transform: none; }
+/* On lime the cream line carries an outline; a little air keeps neighbouring outlines apart. */
+.on-lime .shout .pop { -webkit-text-stroke: .012em var(--lime-stroke); letter-spacing: -.04em; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin: 0; }
+.sticker {
+  display: inline-block; font-weight: 800; font-size: 15px; line-height: 1.2; letter-spacing: -.01em;
+  padding: 11px 17px; border-radius: 999px; background: var(--accent); color: var(--bg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .18); white-space: nowrap;
+}
+
+/* ---------- Bar ---------- */
+
+.bar { position: fixed; inset: 0 0 auto; z-index: 20; transition: background-color .3s, box-shadow .3s; }
+.bar-inner { max-width: var(--page); margin: 0 auto; padding: 14px var(--gutter) 10px; display: flex; align-items: center; gap: 8px; }
+.bar nav { margin-left: auto; display: flex; align-items: center; gap: 2px; }
+.bar nav a { font-size: 14px; font-weight: 600; text-decoration: none; padding: 8px 12px; border-radius: 999px; }
+.bar nav a:hover { background: rgba(23, 27, 22, .08); }
+.bar nav a.pill { background: var(--ink); color: var(--cream); margin-left: 8px; padding: 9px 16px; }
+.bar nav a.pill:hover { background: #000; }
+.bar.is-stuck {
+  background: rgba(255, 253, 244, .86); box-shadow: 0 1px 0 rgba(23, 27, 22, .1);
+  -webkit-backdrop-filter: saturate(1.4) blur(16px); backdrop-filter: saturate(1.4) blur(16px);
+}
+
+/* ---------- Phone (the store screenshots' frame) ---------- */
+
+.phone {
+  position: relative; width: var(--w, 300px); aspect-ratio: 1022 / 2082; flex: none;
+  rotate: var(--tilt, 0deg); filter: drop-shadow(0 26px 24px rgba(0, 0, 0, .42));
+}
+.phone .frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+.phone .screen {
+  position: absolute; left: 5.088%; top: 2.21%; width: 89.82%; height: 95.58%;
+  border-radius: 13.725% / 6.33%; overflow: hidden; background: #fff;
+}
+.phone .screen img, .phone .screen video { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.phone .island { position: absolute; top: 3.75%; left: 37%; width: 26%; height: 2.5%; border-radius: 50px; background: #070806; }
+.piece { position: absolute; filter: drop-shadow(0 14px 14px rgba(0, 0, 0, .32)); }
+
+/* ---------- App Store button ---------- */
+
+.store {
+  display: inline-flex; flex-direction: column; justify-content: center; min-height: 62px; padding: 9px 26px 10px;
+  border-radius: 18px; background: var(--ink); color: var(--cream); text-decoration: none; line-height: 1.15;
+  box-shadow: 0 14px 26px rgba(23, 27, 22, .26); transition: transform .2s, box-shadow .2s;
+}
+.store small { font-size: 12px; font-weight: 500; opacity: .78; }
+.store b { font-size: 22px; font-weight: 600; letter-spacing: -.02em; }
+.store.is-live:hover { transform: translateY(-2px); box-shadow: 0 18px 30px rgba(23, 27, 22, .32); }
+.store:not(.is-live) { pointer-events: none; }
+.on-ink .store { background: var(--lime); color: var(--ink); box-shadow: 0 14px 30px rgba(0, 0, 0, .4); }
+
+/* ---------- Hero ---------- */
+
+.hero { position: relative; background: var(--lime); color: var(--ink); overflow: hidden; --accent: var(--cream); --depth: var(--lime-depth); --bg: var(--ink); }
+.hero-inner {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: center; gap: 24px;
+  min-height: min(100svh, 880px); padding-top: 104px; padding-bottom: 56px;
+}
+.hero h1 { font-size: clamp(46px, 6.5vw, 86px); margin-top: 22px; }
+.hero .lede { font-size: 19px; line-height: 1.55; max-width: 31em; margin: 30px 0 0; }
+.hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 32px; }
+.hero .watch { font-weight: 600; font-size: 15px; text-underline-offset: 4px; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 10px; padding: 0; margin: 34px 0 0; list-style: none; font-size: 14px; font-weight: 600; }
+.facts li { padding: 6px 12px; border-radius: 999px; background: rgba(23, 27, 22, .08); }
+
+.hero-art { position: relative; height: 640px; }
+.hero-art .sweep {
+  position: absolute; left: -22%; top: 26%; width: 190%; height: 72%; border-radius: 300px; background: var(--forest); rotate: -35deg;
+  box-shadow: inset 0 12px 14px rgba(255, 255, 255, .22), 0 30px 60px rgba(0, 0, 0, .28);
+}
+.hero-art .rings { position: absolute; left: -50%; top: 46%; width: 210%; height: 120%; border: 3px solid var(--ink); border-radius: 50%; rotate: -25deg; opacity: .12; }
+.hero-art .phone { position: absolute; left: 50%; top: 14px; --w: min(338px, 31vw); margin-left: calc(var(--w) / -2); --tilt: -7deg; }
+.hero-art .sticker { position: absolute; right: 0; top: 44px; rotate: 8deg; background: var(--cream); color: var(--ink); z-index: 3; }
+.hero-art .piece.bag { width: 250px; right: -40px; bottom: 150px; rotate: 15deg; z-index: 3; }
+.hero-art .piece.pants { width: 270px; left: -40px; bottom: -70px; rotate: -15deg; z-index: 3; }
+.spark { position: absolute; width: 54px; height: 54px; color: var(--cream); }
+.hero-art .spark { right: 4%; bottom: 30px; }
+
+/* ---------- Ticker ---------- */
+
+.ticker { background: var(--ink); color: var(--lime); overflow: hidden; padding: 20px 0; }
+.ticker-track { display: flex; width: max-content; animation: ticker 36s linear infinite; }
+.ticker p { margin: 0; font: 800 30px/1 var(--sans); letter-spacing: -.045em; text-transform: uppercase; white-space: nowrap; }
+.ticker i { font-style: normal; color: var(--cream); padding: 0 .55em; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* ---------- Feature tiles ---------- */
+
+.features { padding: 92px 0 40px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 14px 40px; margin-bottom: 40px; }
+.section-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 5.4vw, 66px); line-height: 1.04; letter-spacing: -.035em; margin: 12px 0 0; }
+.section-head h2 em { display: block; font-style: italic; }
+.section-head .aside { max-width: 23em; margin: 0 0 10px; font-size: 17px; color: #4b5046; }
+
+.tiles { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; }
+.tile {
+  position: relative; overflow: hidden; border-radius: 36px; background: var(--bg); color: var(--fg);
+  display: flex; flex-direction: column; min-height: 640px; container-type: inline-size; isolation: isolate;
+}
+.tile.wide { grid-column: span 7; }
+.tile.narrow { grid-column: span 5; }
+.tile-copy { position: relative; z-index: 4; padding: 40px 40px 0; }
+.tile .shout { font-size: clamp(30px, 8.7cqi, 60px); }
+.tile p.body { font-size: 17px; line-height: 1.5; max-width: 26em; margin: 20px 0 0; }
+.tile-art { position: relative; flex: 1; min-height: 340px; margin-top: 26px; }
+.tile-art .phone { position: absolute; top: 18px; --w: 268px; }
+.tile-art .sticker { position: absolute; z-index: 5; }
+.tile-art .sweep { position: absolute; border-radius: 300px; z-index: -1; }
+.tile-art .photo { position: absolute; object-fit: cover; }
+
+.t-ink { --bg: var(--ink); --fg: var(--cream); --accent: var(--lime); --depth: var(--olive-depth); }
+.t-lilac { --bg: var(--lilac); --fg: var(--lilac-ink); --accent: #fffef4; --depth: var(--lilac-depth); }
+.t-lime { --bg: var(--lime); --fg: var(--ink); --accent: var(--cream); --depth: var(--lime-depth); }
+.t-forest { --bg: var(--forest); --fg: var(--cream); --accent: var(--lime); --depth: #151f14; }
+.t-wine { --bg: var(--wine); --fg: var(--wine-cream); --accent: var(--pink); --depth: var(--pink-depth); }
+
+/* Same piece. A whole new you. */
+.looks .sweep { left: 18%; top: 44%; width: 120%; height: 90%; background: var(--lime); rotate: -30deg; }
+.looks .phone { right: 9%; --tilt: 9deg; }
+.looks .piece { width: 330px; left: 2%; top: 30px; rotate: -16deg; z-index: 3; }
+.looks .sticker { left: 40px; top: -2px; rotate: -8deg; }
+/* See it on you. First. */
+.tryon .sweep { right: -22%; top: 4%; width: 92%; height: 130%; border-radius: 50%; background: var(--violet); }
+.tryon .photo { right: -5%; top: 26px; width: 52%; height: 130%; border-radius: 300px 300px 0 0; rotate: 7deg; box-shadow: 0 0 0 7px rgba(255, 255, 255, .28); }
+.tryon .phone { left: 7%; --tilt: -7deg; --w: 232px; }
+.tryon .sticker { right: 26px; top: -14px; rotate: 8deg; background: var(--lilac-ink); color: #fff; }
+/* Your wardrobe. Now in your pocket. */
+.wardrobe .sweep { left: -30%; top: 30%; width: 170%; height: 100%; background: #f5f7e8; rotate: -28deg; }
+.wardrobe .phone { left: 50%; margin-left: -110px; --tilt: 7deg; --w: 250px; }
+.wardrobe .piece.blouse { width: 210px; left: -8%; top: 0; rotate: -15deg; }
+.wardrobe .piece.heels { width: 190px; right: -5%; top: 150px; rotate: 10deg; z-index: 3; }
+/* What to wear? Ask mira. */
+.stylist .sweep { left: -20%; top: 52%; width: 150%; height: 100%; background: var(--lilac); rotate: 24deg; }
+.stylist .phone { left: 50%; margin-left: -150px; --tilt: -5deg; --w: 300px; }
+.stylist .sticker { right: 8%; top: -6px; rotate: 6deg; border-radius: 22px 22px 6px 22px; font-size: 17px; padding: 13px 19px; }
+.stylist .piece { width: 230px; right: 3%; top: 120px; rotate: 12deg; z-index: 3; }
+/* Your week. Planned. Styled. */
+.planner .sweep { left: -10%; top: 40%; width: 140%; height: 100%; background: var(--lime); rotate: 22deg; }
+.planner .phone { left: 14%; --tilt: -8deg; --w: 280px; }
+.days { position: absolute; right: 9%; top: 6px; rotate: 9deg; display: flex; flex-direction: column; gap: 10px; z-index: 4; }
+.day { width: 84px; padding: 9px 0 10px; text-align: center; border-radius: 15px; background: #fffaf0; color: #20291c; font-size: 13px; font-weight: 600; box-shadow: 0 10px 16px rgba(0, 0, 0, .22); }
+.day b { display: block; font-size: 34px; line-height: 1; letter-spacing: -.06em; font-weight: 800; }
+.day.active { background: var(--ink); color: var(--lime); }
+/* Pack less. Wear more. */
+.trip .photo { left: 0; top: 0; width: 64%; height: 110%; border-radius: 0 44px 0 0; }
+.trip .phone { right: 7%; top: 96px; --tilt: 6deg; --w: 190px; }
+.trip .sticker { right: 22px; top: 24px; rotate: 6deg; color: var(--wine); z-index: 5; }
+
+/* ---------- Film and how it works ---------- */
+
+.film { padding: 84px 0 104px; }
+.film-inner { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; align-items: center; }
+.film-stage { position: relative; justify-self: center; }
+.film-stage .halo { position: absolute; inset: 8% -22% 4%; border-radius: 50%; background: var(--lilac); rotate: -14deg; z-index: -1; }
+.film-stage .phone { --w: min(330px, 78vw); --tilt: -4deg; }
+.sound {
+  position: absolute; right: -8px; bottom: 34px; z-index: 5; border: 0; cursor: pointer; font: 600 13px/1 var(--sans);
+  padding: 11px 15px; border-radius: 999px; background: var(--ink); color: var(--cream); box-shadow: 0 8px 18px rgba(0, 0, 0, .28);
+}
+.film-copy h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.6vw, 72px); line-height: 1.02; letter-spacing: -.035em; margin: 14px 0 0; }
+.film-copy h2 em { display: block; font-style: italic; }
+.film-copy > p:not(.eyebrow) { font-size: 18px; color: #3d4239; max-width: 30em; margin: 24px 0 0; }
+.steps { list-style: none; margin: 38px 0 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 54px 1fr; gap: 4px 0; padding: 18px 0; border-top: 1px solid rgba(23, 27, 22, .14); }
+.steps li:last-child { border-bottom: 1px solid rgba(23, 27, 22, .14); }
+.steps li::before { content: counter(step, decimal-leading-zero); font: 800 15px/1.7 var(--sans); letter-spacing: -.02em; color: var(--lime-stroke); }
+.steps h3 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+.steps p { grid-column: 2; margin: 0; font-size: 16px; color: #4b5046; }
+
+/* ---------- Closing and footer ---------- */
+
+.closing { position: relative; overflow: hidden; background: var(--ink); color: var(--cream); text-align: center; padding: 112px 0 104px; --accent: var(--lime); --depth: var(--olive-depth); }
+.closing .rings { position: absolute; left: 50%; top: 50%; width: 1500px; height: 760px; margin: -380px 0 0 -750px; border: 3px solid var(--cream); border-radius: 50%; rotate: -18deg; opacity: .1; }
+.closing .wrap { position: relative; }
+.closing .shout { font-size: clamp(44px, 8.2vw, 104px); }
+.closing p { font-size: 19px; max-width: 28em; margin: 30px auto 0; color: rgba(255, 253, 244, .82); }
+.closing .store { margin-top: 36px; text-align: left; }
+.closing .spark { left: 12%; top: 22%; color: var(--lime); }
+.closing .spark.two { left: auto; right: 13%; top: 62%; width: 40px; height: 40px; color: var(--pink); }
+
+.foot { background: var(--ink); color: rgba(255, 253, 244, .7); border-top: 1px solid rgba(255, 253, 244, .14); }
+.foot-inner { max-width: var(--page); margin: 0 auto; padding: 28px var(--gutter) 40px; display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: baseline; font-size: 14px; }
+.foot .wordmark { font-size: 26px; letter-spacing: -1.6px; padding: 0; color: var(--cream); }
+.foot nav { display: flex; flex-wrap: wrap; gap: 18px; }
+.foot a { text-underline-offset: 3px; text-decoration-color: rgba(255, 253, 244, .3); }
+.foot a:hover { color: var(--cream); }
+.foot .made { margin-left: auto; }
+
+/* ---------- Motion ---------- */
+
+.js [data-reveal] { opacity: 0; translate: 0 26px; transition: opacity .7s cubic-bezier(.2, .7, .2, 1), translate .7s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--delay, 0s); }
+.js [data-reveal].is-in { opacity: 1; translate: 0 0; }
+.float { animation: float 7s ease-in-out infinite; }
+.float.slow { animation-duration: 9s; animation-delay: -3s; }
+@keyframes float { 50% { translate: 0 -10px; } }
+.hero-art .sticker, .tile-art .sticker { animation: nod 6s ease-in-out infinite; }
+@keyframes nod { 50% { translate: 0 -5px; } }
+.spark { animation: turn 18s linear infinite; }
+@keyframes turn { to { rotate: 360deg; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-reveal] { opacity: 1; translate: 0 0; transition: none; }
+  .float, .spark, .ticker-track, .hero-art .sticker, .tile-art .sticker { animation: none; }
+}
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 980px) {
+  .tile.wide, .tile.narrow { grid-column: span 6; }
+  .tile { min-height: 600px; }
+  .tile-copy { padding: 32px 30px 0; }
+  .film-inner { gap: 44px; }
+  .looks .piece { width: 190px; left: 0; }
+  .looks .phone { right: 4%; --w: 240px; }
+  .tryon .phone { left: 4%; --w: 210px; }
+  .stylist .phone { --w: 260px; margin-left: -130px; }
+  .stylist .piece { width: 130px; right: 0; }
+  .stylist .sticker { right: 4%; }
+  .planner .phone { left: 6%; --w: 250px; }
+  .days { right: 5%; }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .bar nav a.optional { display: none; }
+  .bar nav a { padding: 8px 9px; }
+  .bar nav a.pill { display: none; }
+  .hero-inner { grid-template-columns: 1fr; min-height: 0; padding-top: 96px; padding-bottom: 0; gap: 8px; }
+  .hero h1 { font-size: min(12.4vw, 64px); margin-top: 18px; }
+  .hero .lede { font-size: 17px; margin-top: 22px; }
+  .hero .actions { margin-top: 26px; }
+  .facts { margin-top: 26px; font-size: 13px; }
+  .hero-art { height: 470px; margin: 26px calc(var(--gutter) * -1) 0; }
+  .hero-art .phone { --w: 250px; top: 30px; }
+  .hero-art .sticker { right: 18px; top: 8px; }
+  .hero-art .piece.bag { width: 120px; right: 2px; bottom: 60px; }
+  .hero-art .piece.pants { width: 110px; left: 8px; bottom: -30px; }
+  .hero-art .spark { right: 8%; bottom: 190px; width: 40px; height: 40px; }
+  .ticker { padding: 15px 0; }
+  .ticker p { font-size: 22px; }
+  .features { padding: 64px 0 24px; }
+  .section-head { margin-bottom: 28px; }
+  .tiles { gap: 14px; }
+  .tile.wide, .tile.narrow { grid-column: span 12; }
+  .tile { min-height: 0; border-radius: 30px; }
+  .tile-copy { padding: 30px 26px 0; }
+  .tile-art { flex: none; height: 330px; min-height: 0; margin-top: 22px; }
+  .tile-art .phone { --w: 230px; }
+  .looks .piece { width: 170px; left: -4%; top: 60px; }
+  .looks .phone { right: 6%; }
+  .looks .sticker { left: 26px; }
+  .tryon .phone { left: 6%; --w: 205px; }
+  .wardrobe .phone { margin-left: -105px; --w: 225px; }
+  .wardrobe .piece.blouse { width: 120px; }
+  .wardrobe .piece.heels { width: 125px; }
+  .stylist .phone { --w: 240px; margin-left: -138px; }
+  .stylist .sticker { right: 16px; font-size: 15px; padding: 11px 15px; }
+  .stylist .piece { width: 118px; bottom: 6px; }
+  .planner .phone { left: 7%; --w: 225px; }
+  .days { right: 6%; top: 0; }
+  .day { width: 72px; font-size: 12px; }
+  .day b { font-size: 29px; }
+  .trip .phone { --w: 160px; top: 110px; right: 6%; }
+  .film { padding: 60px 0 76px; }
+  .film-inner { grid-template-columns: 1fr; gap: 46px; }
+  .film-stage .phone { --w: min(270px, 70vw); }
+  .sound { right: -18px; }
+  .closing { padding: 84px 0 80px; }
+  .closing .spark { left: 7%; top: 26px; width: 34px; height: 34px; }
+  .closing .spark.two { right: 8%; top: auto; bottom: 34px; width: 30px; height: 30px; }
+  .foot .made { margin-left: 0; }
+}
+
+/* Inside the app the page shows without site chrome, like the legal pages. */
+html.in-app .bar, html.in-app .foot { display: none; }
+
+/* The film keeps its own 9:16 frame: a phone bezel would crop its captions. */
+.film-frame {
+  width: min(330px, 76vw); aspect-ratio: 9 / 16; border-radius: 40px; overflow: hidden; rotate: -4deg; background: #34373b;
+  box-shadow: 0 34px 50px rgba(23, 27, 22, .34), 0 0 0 8px var(--ink);
+}
+.film-frame video { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 760px) { .film-frame { width: min(270px, 70vw); border-radius: 34px; } }
