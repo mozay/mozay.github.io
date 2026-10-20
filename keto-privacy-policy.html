@@ -205,10 +205,11 @@
             <tr><td>Usage events (analytics)</td><td>At most 14 months; reports without any identifier may be kept longer</td></tr>
             <tr><td>Records of processed subscription events (event type, account identifier, time)</td><td>Deleted automatically after 60 days</td></tr>
             <tr><td>Free AI allowance record (keyed hash, see section 6)</td><td>Kept after account deletion; no fixed end date</td></tr>
+            <tr><td>Per-network AI request counters (a keyed hash of your network address, for IPv6 of its /64 prefix, never the address itself), used to limit abuse of the AI features</td><td>Deleted automatically after 2 days</td></tr>
           </tbody>
         </table>
       </div>
-      <p><strong>Guest data</strong> stays on our servers until you delete it. Deleting the App from your phone does not delete it, and after reinstalling, the App cannot reconnect to the earlier guest account. The same applies to guest data left behind when you sign in with an Apple ID that already had a Ketify account. To remove guest data, use <strong>Delete my data</strong> before you remove the App, or back up with Apple so you can sign in again later.</p>
+      <p><strong>Guest data</strong> stays on our servers until you delete it. Deleting the App from your phone does not delete it, and after reinstalling, the App cannot reconnect to the earlier guest account. If you sign in with an Apple ID that already has a Ketify account, the App switches to that account and deletes the guest account and the data you saved as a guest. To remove guest data, use <strong>Delete my data</strong> before you remove the App, or back up with Apple so you can sign in again later.</p>
     </section>
 
     <section id="s6">
