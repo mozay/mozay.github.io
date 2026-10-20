@@ -24,7 +24,7 @@
 <main class="doc">
   <p class="eyebrow">Legal · Privacy</p>
   <h1>Privacy Policy <em>plainly written.</em></h1>
-  <p class="meta">Last updated 1 October 2026 · Applies to the kadife. app for iPhone and its services</p>
+  <p class="meta">Last updated 20 October 2026 · Applies to the kadife. app for iPhone and its services</p>
 
   <p class="lede">kadife. is a personal stylist that works from photos of your own clothes. That
      means it looks after things you care about — your wardrobe, your photos and sometimes a
@@ -36,7 +36,8 @@
     <ul>
       <li>No ads, no tracking and no data brokers. Nothing is ever sold.</li>
       <li>Your wardrobe, photos, conversations and plans live in your own account on Google
-          Firebase in Frankfurt and can be read only through your sign-in.</li>
+          Firebase in Frankfurt, and only your account can read them. You can start as a guest
+          without signing in; signing in is with Apple.</li>
       <li>AI features send only what they need, only when you use them, to Google’s Vertex AI,
           which may not use it to train models.</li>
       <li>Delete any piece, photo, chat or try-on whenever you like. Deleting your account in
@@ -74,10 +75,12 @@
   <table>
     <thead><tr><th scope="col">Data</th><th scope="col">Why</th><th scope="col">Legal basis</th></tr></thead>
     <tbody>
-    <tr><td>Account: an account identifier, and the email address, first name and profile
-            photo link that Apple or Google share</td>
-        <td>To sign you in and keep your wardrobe with you on every device. Your first name
-            and photo appear only to you, in the app.</td>
+    <tr><td>Account: a random account identifier. As a guest, that is all — no name or email.
+            If you sign in with Apple, also the email address (or Apple’s private relay address)
+            and first name Apple shares. Accounts created with Google in an earlier version also
+            hold the email address, first name and profile photo link Google shared</td>
+        <td>To keep your wardrobe in your account and, once you sign in, with you on every
+            device. Your first name and photo appear only to you, in the app.</td>
         <td>Performance of a contract</td></tr>
     <tr><td>Style profile: the goals, style, colours, fit, coverage and comfort preferences you
             choose, and your city and country</td>
@@ -106,13 +109,16 @@
         <td>Performance of a contract and your explicit confirmation in the app before the first
             try-on</td></tr>
     <tr><td>Membership: plan, renewal and expiry dates, trial status, store transaction
-            identifiers, credits and daily message counts</td>
+            identifiers, credits and daily message and try-on counts. A guest can buy too; the
+            purchase is linked to the guest account identifier</td>
         <td>To unlock what you paid for and apply fair-use limits</td>
         <td>Performance of a contract</td></tr>
-    <tr><td>Offers: whether you spun the gift wheel, the discount you won and when it expires, and
-            a keyed one-way hash of your Apple or Google account identifier</td>
-        <td>To give each person one welcome offer, even if an account is deleted and created
-            again</td>
+    <tr><td>Welcome credits and offers: whether an Apple (or earlier Google) identity has already
+            received welcome credits or an offer, any discount and when it expires, stored under a
+            keyed one-way hash of that account identifier, never the identifier itself</td>
+        <td>To give each person welcome credits and one welcome offer only once, even if an
+            account is deleted and created again. Guests receive no welcome credits until they
+            sign in</td>
         <td>Legitimate interest in preventing abuse</td></tr>
     <tr><td>Calendar, only if you connect it: the titles and times of your events for the next
             seven days and your calendars' names, read on your iPhone</td>
@@ -127,8 +133,9 @@
             answers, and whether you have seen an answer</td>
         <td>To answer you and let you find earlier requests in the app</td>
         <td>Legitimate interest in helping you</td></tr>
-    <tr><td>Security and diagnostics: an App Attest check from Apple, request times, IP address,
-            error codes and technical identifiers in server logs</td>
+    <tr><td>Security and diagnostics: an App Attest token from Apple that lets our server check a
+            request comes from the genuine kadife. app, request times, IP address, error codes and
+            technical identifiers in server logs</td>
         <td>To stop automated abuse of paid AI features, keep the service running and find what
             broke</td>
         <td>Legitimate interest in a secure, working service</td></tr>
@@ -261,7 +268,8 @@
         <td>Sign in with Apple, App Store payments, App Attest, WeatherKit, MapKit and
             notification delivery</td>
         <td>Global</td></tr>
-    <tr><td>Google Sign-In</td><td>Sign in with Google</td><td>Global</td></tr>
+    <tr><td>Google Sign-In</td><td>Only for accounts created with Google in an earlier version,
+            to confirm the account before it is deleted. New sign-ins use Apple only</td><td>Global</td></tr>
     </tbody>
   </table>
   </div>
@@ -290,10 +298,14 @@
         installation identifier and its settings fourteen months after the app was last used;
         after that only aggregated reports that describe no individual remain.</li>
     <li><strong>Crash reports (Firebase Crashlytics)</strong> — ninety days.</li>
-    <li><strong>After you delete your account</strong> we keep only a record of the deletion
-        holding a one-way hash of the old account identifier (never your email or content), the
-        keyed hash used for one-time offers, and purchase records Apple and RevenueCat must keep
-        for accounting and tax. App usage events and crash reports are tied to an installation
+    <li><strong>After you delete your account</strong> we keep only: a record of the deletion
+        holding a one-way hash of the old account identifier (never your email or content); the
+        keyed hash used for one-time welcome credits and offers; a store-purchase ledger entry for
+        each App Store purchase (the transaction ID or a hash of it, the product, the credits it
+        gave, whether it was refunded and the internal account identifier that last held it), so
+        the same purchase is never credited twice when it is restored on another account; and the
+        purchase records RevenueCat and Apple keep for accounting and tax — deleting your account
+        in kadife. does not delete your subscriber record at RevenueCat. App usage events and crash reports are tied to an installation
         identifier, not to your account, so they are not deleted with it; they expire on the
         schedule above.</li>
   </ul>
@@ -306,9 +318,11 @@
         try-on photo or a result inside the app.</li>
     <li><strong>What Kadife learned.</strong> Profile → Style memory lets you forget single
         reactions or reset them all.</li>
-    <li><strong>Everything.</strong> Profile → Delete account. You confirm with Apple or Google,
-        then our server deletes your account data, photos and sign-in straight away. You can
-        also remove kadife. from Settings → your name → Sign in with Apple.</li>
+    <li><strong>Everything.</strong> Profile → Delete account. If you signed in, you confirm with
+        Apple (or Google, for an earlier Google account) first; a guest confirms in the app. Our
+        server then deletes your account data, photos, support requests and sign-in straight away,
+        and removes your notification tokens. You can also remove kadife. from Settings →
+        your name → Sign in with Apple.</li>
   </ul>
   <p>Deleting your account does not cancel an App Store subscription — cancel it in your Apple
      ID subscriptions. You can also ask us by email to delete your data.</p>
@@ -327,10 +341,13 @@
   <h2 id="security">Security</h2>
   <ul>
     <li>Data is encrypted in transit and at rest.</li>
-    <li>Database and storage rules let an account read and write only its own records.
-        Memberships, credits and offers can be written only by our server.</li>
-    <li>Paid AI features require Apple’s App Attest, a signed-in account, an active session and
-        per-account limits.</li>
+    <li>Database and storage rules let an account, including a guest account, read and write only
+        its own records. Memberships, credits and offers can be written only by our server.</li>
+    <li>Paid AI features need an account signed in with Apple, or a guest with an active
+        membership (for try-on and photo to pieces, purchased credits also count), plus an active
+        session and per-account limits. The app sends
+        an Apple App Attest token with these requests so our server can check they come from the
+        genuine app.</li>
     <li>We do not write message text, photos or sign-in tokens to our logs.</li>
   </ul>
   <p>No system is perfectly secure. If a breach affects your data, we will tell you and the
