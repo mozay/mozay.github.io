@@ -86,8 +86,7 @@
 
   <h2>Your account</h2>
   <p>The app creates an account for you automatically so your Library and your
-     credits follow you. We do not ask for your name, email address or phone number,
-     and we never see your Apple ID.</p>
+     credits follow you. We do not ask for your name, email address or phone number.</p>
   <p>The account is built from one random identifier that the app creates on your
      phone and stores in your iCloud Keychain. It contains nothing about you. The
      sign-in name our system uses is made from this identifier; it is not a real
@@ -97,9 +96,23 @@
   <p>Under the account we store: your credit balance, the identifier, the date the
      account was created, your Library records and photographs, and a record of the
      credit packs you bought (see Purchases).</p>
-  <p>The identifier is also how we give the free starting credits once per person
-     rather than once per installation. To do that we keep a separate record, keyed
-     by the identifier, that says when the free credits were given.</p>
+  <h2>Sign in with Apple and the free starting credits</h2>
+  <p>You can use Sepira and buy credits without signing in. The free starting
+     credits are given only after you choose Sign in with Apple, because accounts
+     without it can be created without limit. Sign in with Apple is offered when you
+     have no credits and tap a tool; you can say "Not now".</p>
+  <p>When you sign in, Apple gives us an identifier for your Apple Account that is
+     unique to our apps. We do not request your name or email address. The
+     identifier is linked to your existing Sepira account, so your Library and
+     credits stay the same.</p>
+  <p>The free starting credits are given once per Apple Account. To do that we keep
+     a record that contains only a one-way keyed hash of that Apple identifier and
+     the date the credits were given. It does not contain your account, and the
+     identifier cannot be read back from it. We also keep a record, keyed by the
+     random identifier above, of when this phone's account received free credits.</p>
+  <p>If the Apple Account you sign in with already has a Sepira account, the app
+     switches to that account and deletes the guest account on this phone, together
+     with its photographs. The app tells you this before it happens.</p>
 
   <h2>Purchases</h2>
   <p>Payment is handled by Apple. We never see your card details. There is no
@@ -108,6 +121,9 @@
      server then adds the credits and keeps a record of the purchase: the product,
      the number of credits, the store and its transaction number, and the date. Refunds
      issued by Apple are recorded the same way and the credits are removed.</p>
+  <p>So that a purchase is credited only once, we also keep a separate record per
+     transaction number: the product, the number of credits, the date and a one-way
+     hash of the account it was credited to.</p>
   <p>If a purchase reaches us without an account it can be matched to, we keep a
      record of it (product, credits, transaction number, the purchase identifier
      RevenueCat sent, and the date) so the credits can be given to the right person
@@ -149,12 +165,19 @@
      its requests, created with Apple's App Attest. It lets our server check that a request comes from a genuine copy of
      the app on a real Apple device. The token identifies the app, not you.</p>
   <p>Our server also counts how many free starting credits are given and how much
-     processing is done each day, as totals only, so a flood of requests cannot run
-     up unlimited costs.</p>
+     processing is done each day, as totals, so a flood of requests cannot run up
+     unlimited costs.</p>
+  <p>To set daily limits per account and per network, our server counts, for each
+     day, how many accounts were created, free credits given, restorations started,
+     photo links requested and deletions made. Each counter is stored under a
+     one-way keyed hash of your account identifier or of your network address (for
+     IPv6, only the first half of the address). The address itself is never stored.
+     These counters are deleted automatically after 3 days.</p>
 
   <h2>Who else is involved</h2>
   <ul>
-    <li><strong>Apple</strong> — the App Store, payments, iCloud Keychain, App Attest.</li>
+    <li><strong>Apple</strong> — the App Store, payments, iCloud Keychain, App Attest,
+        Sign in with Apple.</li>
     <li><strong>Google (Firebase and Google Cloud)</strong> — accounts, database,
         file storage, server functions, app settings, crash reporting, usage
         measurement and App Check. Our database is in Europe; our file storage and
@@ -175,8 +198,11 @@
     <tr><td>Uploads from failed jobs</td><td>Deleted when the job fails</td></tr>
     <tr><td>Account, credit balance, purchase records</td>
         <td>Until you delete your data</td></tr>
-    <tr><td>Record that free credits were given</td>
+    <tr><td>Records that free credits were given (per Apple Account hash and per phone account)</td>
         <td>Kept after deletion (see below)</td></tr>
+    <tr><td>Per-transaction purchase record</td>
+        <td>Kept after deletion, so a purchase is never credited twice</td></tr>
+    <tr><td>Daily per-account and per-network counters</td><td>3 days</td></tr>
     <tr><td>Purchases we could not match to an account</td>
         <td>Until resolved, or on request</td></tr>
     <tr><td>Server logs</td><td>30 days</td></tr>
@@ -189,15 +215,20 @@
   <p>You can delete any single item in your Library, or everything at once. In
      Settings, <strong>Delete my photos &amp; data</strong> deletes, from our
      servers: every original and result, your Library, your credit balance, your
-     purchase records and your account. Credits you have not used are lost,
+     purchase records and your account. If you signed in with Apple, the app asks
+     Apple to confirm once more and then revokes Sepira's Sign in with Apple access.
+     Credits you have not used are lost,
      including purchased ones, and cannot be brought back. The app also clears its
      copies on your phone and then starts a new, empty account so it keeps
      working.</p>
   <p>What remains after deletion:</p>
   <ul>
-    <li>A record, keyed by the random identifier, of when the free starting credits
-        were given. It contains nothing else and is kept so the free credits are not
-        given again. The new account starts with no credits.</li>
+    <li>The records of when the free starting credits were given: one keyed by the
+        random identifier, and, if you signed in with Apple, one under a one-way
+        keyed hash of your Apple identifier. They contain nothing else and are kept
+        so the free credits are not given again, also not after signing in again
+        with the same Apple Account. The new account starts with no credits.</li>
+    <li>The per-transaction purchase records described under Purchases.</li>
     <li>The identifier itself in your Keychain on your phone (and in iCloud Keychain
         if it is turned on), which you control.</li>
     <li>Purchase records held by Apple and RevenueCat under their own terms. The app
