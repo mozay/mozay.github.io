@@ -18,11 +18,11 @@
 
 <main>
   <h1>Privacy Policy</h1>
-  <p class="date">Last updated 20 October 2026</p>
+  <p class="date">Last updated 22 October 2026</p>
 
   <p class="lede">Sepira is made by Mehmet Ozay. This page says what the app
      collects, where your photographs go, how long they are kept and how to delete
-     them. It describes what the app actually does.</p>
+     them. It describes what the app actually does, on iPhone and on Android.</p>
 
   <h2>The short version</h2>
   <p>To repair a photograph the app has to send it to a server — the work cannot be
@@ -74,7 +74,8 @@
      chose.</p>
 
   <h2>On your phone</h2>
-  <p>You choose a photograph with the iOS photo picker, which gives the app only the
+  <p>You choose a photograph with the system photo picker (the iOS photo picker on
+     iPhone, the Android photo picker on Android), which gives the app only the
      photo you pick. If the photograph has a date, the app reads it on your phone so
      the saved result can keep the original date. That date stays on your phone and
      is not uploaded.</p>
@@ -83,6 +84,10 @@
      library so it can create and fill that album. Copies of your results are cached
      on your phone so your Library opens quickly; this cache is cleared when you
      delete your data in the app or remove the app.</p>
+  <p><strong>On Android</strong>, saved results go to your Pictures folder, or to a
+     "Sepira" folder inside it when the album setting is on. Android 8 and 9 ask for
+     storage permission the first time you save; newer versions need no permission
+     for this. The app does not read the rest of your photo library.</p>
 
   <h2>Your account</h2>
   <p>The app creates an account for you automatically so your Library and your
@@ -93,6 +98,13 @@
      email address and nothing is ever sent to it. Because the identifier is kept in
      the Keychain, your account survives reinstalling the app, and, when iCloud
      Keychain is turned on, moving to a new phone with the same Apple Account.</p>
+  <p><strong>On Android</strong>, the identifier is stored on the phone and in
+     Google's Block Store, which keeps a copy in your Google Account's backup when
+     backup is turned on. That is how your account survives reinstalling the app and
+     moving to a new phone with the same Google Account. Android may also include the
+     app's settings (language, album choice and the original dates of saved
+     photographs) in your own Google backup. These backups are controlled by you and
+     Google; your photographs and results are not part of them.</p>
   <p>Under the account we store: your credit balance, the identifier, the date the
      account was created, your Library records and photographs, and a record of the
      credit packs you bought (see Purchases).</p>
@@ -100,7 +112,9 @@
   <p>You can use Sepira and buy credits without signing in. The free starting
      credits are given only after you choose Sign in with Apple, because accounts
      without it can be created without limit. Sign in with Apple is offered when you
-     have no credits and tap a tool; you can say "Not now".</p>
+     have no credits and tap a tool; you can say "Not now". On Android, Sign in with
+     Apple opens Apple's own sign-in page; it works the same way and gives us the
+     same identifier.</p>
   <p>When you sign in, Apple gives us an identifier for your Apple Account that is
      unique to our apps. We do not request your name or email address. The
      identifier is linked to your existing Sepira account, so your Library and
@@ -115,12 +129,15 @@
      with its photographs. The app tells you this before it happens.</p>
 
   <h2>Purchases</h2>
-  <p>Payment is handled by Apple. We never see your card details. There is no
-     subscription. RevenueCat receives the purchase from Apple together with your
+  <p>Payment is handled by Apple (App Store) on iPhone and iPad, and by Google
+     (Google Play Billing) on Android, depending on where you installed the app.
+     Apple and Google handle your payment details under their own privacy policies;
+     we never see your card details. There is no
+     subscription. RevenueCat receives the purchase from Apple or Google together with your
      account's identifier and tells our server which credit pack you bought. Our
      server then adds the credits and keeps a record of the purchase: the product,
      the number of credits, the store and its transaction number, and the date. Refunds
-     issued by Apple are recorded the same way and the credits are removed.</p>
+     issued by Apple or Google are recorded the same way and the credits are removed.</p>
   <p>So that a purchase is credited only once, we also keep a separate record per
      transaction number: the product, the number of credits, the date and a one-way
      hash of the account it was credited to.</p>
@@ -155,15 +172,20 @@
      no longer than 14 months; totals that do not identify anyone may be kept
      longer.</p>
   <p><strong>We do not track you and we do not use an advertising identifier.</strong>
-     The app ships the version of Firebase Analytics that has advertising support
-     removed, it contains no advertising software, and it never asks for permission
-     to track. Nothing is shared with data brokers or advertising networks.</p>
+     On iPhone the app ships the version of Firebase Analytics that has advertising
+     support removed and never asks for permission to track. On Android the app
+     removes the advertising ID permission and turns off advertising ID collection,
+     so the Android Advertising ID is not collected. The app contains no advertising
+     software. Nothing is shared with data brokers or advertising networks.</p>
 
   <h2>Abuse prevention</h2>
   <p>Each restoration costs us money at the image provider. To help keep requests
      from outside the app away, the app sends a token from Firebase App Check with
-     its requests, created with Apple's App Attest. It lets our server check that a request comes from a genuine copy of
-     the app on a real Apple device. The token identifies the app, not you.</p>
+     its requests, created with Apple's App Attest on iPhone and iPad, and with Google
+     Play Integrity on Android. It lets our server check that a request comes from a
+     genuine copy of the app on a real device. The token identifies the app, not
+     you. Google processes the Play Integrity check under its own privacy
+     policy.</p>
   <p>Our server also counts how many free starting credits are given and how much
      processing is done each day, as totals, so a flood of requests cannot run up
      unlimited costs.</p>
@@ -178,6 +200,9 @@
   <ul>
     <li><strong>Apple</strong> — the App Store, payments, iCloud Keychain, App Attest,
         Sign in with Apple.</li>
+    <li><strong>Google Play</strong> — distribution on Android, payments (Google Play
+        Billing), Play Integrity checks, and Block Store and backup of the
+        identifier. Google acts under its own privacy policy.</li>
     <li><strong>Google (Firebase and Google Cloud)</strong> — accounts, database,
         file storage, server functions, app settings, crash reporting, usage
         measurement and App Check. Our database is in Europe; our file storage and
@@ -216,11 +241,18 @@
      Settings, <strong>Delete my photos &amp; data</strong> deletes, from our
      servers: every original and result, your Library, your credit balance, your
      purchase records and your account. If you signed in with Apple, the app asks
-     Apple to confirm once more and then revokes Sepira's Sign in with Apple access.
+     Apple to confirm once more and then revokes Sepira's Sign in with Apple access
+     (on Android, when Apple's sign-in page returns the token needed for that; you
+     can also remove Sepira yourself at appleid.apple.com under Sign in with
+     Apple).
      Credits you have not used are lost,
      including purchased ones, and cannot be brought back. The app also clears its
      copies on your phone and then starts a new, empty account so it keeps
      working.</p>
+  <p>You can also ask for deletion without the app. See
+     <a href="delete-account.html">Delete your account</a>: write to us with the
+     User ID shown at the bottom of Settings and we delete the same data within
+     30 days.</p>
   <p>What remains after deletion:</p>
   <ul>
     <li>The records of when the free starting credits were given: one keyed by the
@@ -230,8 +262,9 @@
         with the same Apple Account. The new account starts with no credits.</li>
     <li>The per-transaction purchase records described under Purchases.</li>
     <li>The identifier itself in your Keychain on your phone (and in iCloud Keychain
-        if it is turned on), which you control.</li>
-    <li>Purchase records held by Apple and RevenueCat under their own terms. The app
+        if it is turned on), or on Android in Block Store and your Google backup,
+        which you control.</li>
+    <li>Purchase records held by Apple or Google and RevenueCat under their own terms. The app
         does not delete the RevenueCat record; write to us and we will delete
         it.</li>
     <li>Server logs, crash reports and usage measurement, until they expire as
