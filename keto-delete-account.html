@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your account — Ketify</title>
+<meta name="description" content="How to delete your Ketify account and data, in the app or without it.">
+<meta name="theme-color" content="#F7F4EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root{color-scheme:light dark;--bg:#F7F4EC;--surface:#FFFDF8;--ink:#14170F;--ink-soft:#5F6355;
+      --ink-faint:#969A8B;--accent:#1F7A3D;--accent-soft:#E5EFE2;--amber:#C8811F;--amber-soft:#F7EEDC;
+      --line:#E4DFD1;--radius:18px;--measure:34rem}
+    @media (prefers-color-scheme:dark){:root{--bg:#0B0B0B;--surface:#161616;--ink:#F2F2F0;--ink-soft:#A3A3A0;
+      --ink-faint:#6B6B68;--accent:#58C983;--accent-soft:#16261B;--amber:#E8A33D;--amber-soft:#2C2211;--line:#262626}}
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:44rem;margin:0 auto;padding:0 1.5rem 5rem}
+    header.masthead{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem}
+    .brand{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:800;
+      letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 1.1rem}
+    .brand svg{width:1.15em;height:1.15em}
+    h1{font-family:Fraunces,"Iowan Old Style",Georgia,"Times New Roman",serif;font-weight:800;
+      font-size:clamp(2.1rem,7vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 1rem}
+    .updated{display:inline-block;font-size:.8rem;font-weight:600;color:var(--ink-soft);
+      background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem;margin:0}
+    .lede{margin:1.6rem 0 0;font-size:1.06rem;color:var(--ink-soft);max-width:var(--measure)}
+    nav.toc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:1.35rem 1.5rem;margin:0 0 3rem}
+    nav.toc h2{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--ink-faint);margin:0 0 .85rem}
+    nav.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:2rem}
+    @media (max-width:34rem){nav.toc ol{columns:1}}
+    nav.toc li{break-inside:avoid;margin:0 0 .45rem;font-size:.93rem}
+    nav.toc a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;
+      transition:color .15s,border-color .15s}
+    nav.toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+    section{margin:0 0 2.75rem;scroll-margin-top:1.5rem}
+    h2.section{font-family:Fraunces,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:1.4rem;
+      letter-spacing:-.01em;line-height:1.25;margin:0 0 .9rem;display:flex;align-items:baseline;gap:.7rem}
+    h2.section .num{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:.72rem;font-weight:800;
+      letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);border-radius:999px;
+      padding:.22rem .6rem;flex:none;transform:translateY(-.15em)}
+    h3{font-size:.96rem;font-weight:700;margin:1.7rem 0 .45rem}
+    p{margin:0 0 1rem;max-width:var(--measure)}
+    ul{margin:0 0 1rem;padding-left:1.15rem;max-width:var(--measure)}
+    li{margin:0 0 .5rem}
+    li::marker{color:var(--accent)}
+    a{color:var(--accent)}
+    .callout{background:var(--amber-soft);border:1px solid var(--amber);border-radius:var(--radius);
+      padding:1.1rem 1.3rem;margin:0 0 1.25rem;max-width:var(--measure)}
+    .callout p:last-child{margin-bottom:0}
+    .callout .label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
+    .table-scroll{overflow-x:auto;margin:0 0 1.25rem;-webkit-overflow-scrolling:touch}
+    table{border-collapse:collapse;width:100%;min-width:28rem;font-size:.93rem;background:var(--surface);
+      border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+    th{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+    tr:last-child td{border-bottom:none}
+    .contact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:1.5rem;margin:3rem 0 0}
+    .contact p{margin:0 0 .5rem}
+    .contact a{font-weight:700;font-size:1.05rem;text-decoration:none;
+      border-bottom:2px solid var(--accent);padding-bottom:1px}
+    footer.page{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.82rem;
+      color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;justify-content:space-between}
+    footer.page a{color:var(--ink-soft);text-decoration:none}
+    footer.page a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main>
+    <h1>Delete your Ketify account and data</h1>
+    <p class="updated">Last updated: 25 October 2026</p>
+    <p>Ketify (App Store and Google Play) is made by Mehmet Ozay (developer name on Google Play: Keşkül Mobile Apps). You can delete your account and everything stored for it at any time, in the app or by writing to us.</p>
+    <h2>In the app</h2>
+    <ol>
+      <li>Open Ketify and go to <strong>Profile</strong>.</li>
+      <li>Open <strong>Account</strong> and tap <strong>Delete account</strong> (as a guest: <strong>Delete my data</strong>), then confirm.</li>
+    </ol>
+    <p>Deletion happens straight away and cannot be undone. The app then returns to its introduction.</p>
+    <h2>Without the app</h2>
+    <p>Write to <a href="mailto:mehmetozay94@gmail.com?subject=Delete%20my%20Ketify%20account">mehmetozay94@gmail.com</a> with the subject “Delete my Ketify account”, from the email address of your Sign in with Apple account if you used one, or with the Google Play order number (it starts with GPA.) of a subscription. We delete the account within 30 days and reply when it is done.</p>
+    <h2>What is deleted</h2>
+    <ul>
+      <li>Your profile and everything stored in your account: goals, logged meals, water, weigh-ins, ketone and glucose readings, favourites, weekly plan, pantry, shopping list and the recipes Panda Chef wrote for you.</li>
+      <li>Your recipe ratings and any reports you sent.</li>
+      <li>Your customer record at RevenueCat and your sign-in account.</li>
+    </ul>
+    <h2>What is kept</h2>
+    <ul>
+      <li>If you used free AI features while signed in with Apple and without Pro: one keyed one-way hash of your Apple identifier with the number of free uses, so that re-creating an account does not reset the free allowance. It contains nothing else.</li>
+      <li>Records of processed subscription events, server logs and crash reports until they expire (up to 90 days), and usage measurement for up to 14 months.</li>
+      <li>Purchase records held by Apple or Google under their own terms. Deleting the account does not cancel a subscription: cancel it in your Apple ID settings or in Google Play › Payments &amp; subscriptions.</li>
+    </ul>
+    <p>Full details are in the <a href="keto-privacy-policy.html">Privacy Policy</a>.</p>
+  </main>
+</div>
+</body>
+</html>

@@ -80,7 +80,7 @@
   <header class="masthead">
     <p class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Ketify</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 20 October 2026</p>
+    <p class="updated">Last updated: 25 October 2026</p>
     <p class="lede">What data the Ketify app (formerly KetoChef) collects, why it is collected, who processes it, how long it is kept and how to delete it.</p>
   </header>
 
@@ -98,6 +98,7 @@
         <li><a href="#s9">Children</a></li>
         <li><a href="#s10">Security</a></li>
         <li><a href="#s11">Changes to this policy</a></li>
+        <li><a href="#android">On Android (Google Play)</a></li>
     </ol>
   </nav>
 
@@ -151,7 +152,7 @@
 
       <div class="callout">
         <span class="label">What we never collect</span>
-        <p>Your location, contacts, the advertising identifier and your payment details <strong>never</strong> reach us. Payments are handled entirely by Apple; we do not see your card details.</p>
+        <p>Your location, contacts, the advertising identifier and your payment details <strong>never</strong> reach us. Payments are handled entirely by Apple (App Store) or Google (Google Play), depending on where you installed the App; we do not see your card details.</p>
       </div>
     </section>
 
@@ -185,7 +186,7 @@
         <li><strong>Google Gemini API</strong> — writes Panda Chef recipes and ingredient swaps. It receives the data listed for that purpose in section 3, never your name, email address, photos or Apple Health data.</li>
         <li><strong>fal.ai</strong> (USA) — reads labels, meals and fridge photos. It receives the photo, your language and, for fridge scans, the names of the foods recognised in it, and passes them to the AI model it runs. It never receives your name, email address or Apple Health data.</li>
         <li><strong>Pollinations.ai</strong> — recipe cover images. When a recipe has no stored photo, your device requests a generated image directly from Pollinations, using the recipe&rsquo;s name and short description. Pollinations sees your device&rsquo;s IP address and that text, but no account data.</li>
-        <li><strong>RevenueCat</strong> — subscription status. It receives your account identifier and your App Store purchase information.</li>
+        <li><strong>RevenueCat</strong> — subscription status. It receives your account identifier and your App Store or Google Play purchase information.</li>
         <li><strong>Apple</strong> — payments, Sign in with Apple, Apple Health (on your device), speech recognition for voice commands and App Attest.</li>
       </ul>
       <p>We may also disclose data to competent authorities where the law requires it.</p>
@@ -227,9 +228,9 @@
       <ul>
         <li>If you used free AI features while signed in with Apple and without Pro, we keep one record: a keyed one-way hash (HMAC) of your Apple account identifier with the number of free AI uses you consumed per feature and the time of the last update. It cannot be turned back into your identifier and contains nothing else. It exists only so that deleting and re-creating an account does not reset the free AI allowance (abuse prevention, legitimate interest).</li>
         <li>Records of processed subscription events, server logs and crash reports, until the periods in section 5 end.</li>
-        <li>Your purchase history at Apple, which Apple keeps under its own privacy policy.</li>
+        <li>Your purchase history at Apple or Google, which they keep under their own privacy policies.</li>
       </ul>
-      <p>Deleting your account does not cancel an App Store subscription; cancel it in your Apple ID settings. You can stop using Sign in with Apple with Ketify at any time in iOS Settings &rsaquo; [your name] &rsaquo; Sign-In &amp; Security &rsaquo; Sign in with Apple.</p>
+      <p>Deleting your account does not cancel an App Store or Google Play subscription; cancel it in your Apple ID settings or in Google Play › Payments &amp; subscriptions › Subscriptions. You can also ask for deletion without the App: see <a href="keto-delete-account.html">Delete your Ketify account</a>. You can stop using Sign in with Apple with Ketify at any time in iOS Settings &rsaquo; [your name] &rsaquo; Sign-In &amp; Security &rsaquo; Sign in with Apple.</p>
     </section>
 
     <section id="s7">
@@ -265,6 +266,22 @@
       <h2 class="section"><span class="num">11</span>Changes to this policy</h2>
       <p>We may update this policy. We will notify you in the App of significant changes. The date at the top of this page shows the most recent update.</p>
     </section>
+
+    <section id="android">
+      <h2 class="section"><span class="num">12</span>On Android (Google Play)</h2>
+      <p>The Android version of the App works the same way and processes the same data, with these platform differences:</p>
+      <ul>
+        <li><strong>Payments:</strong> Ketify Pro is sold and processed by Google through Google Play Billing. Google handles your payment information under the Google Privacy Policy. RevenueCat receives the equivalent purchase information from Google Play (product, dates, order identifier, Play country).</li>
+        <li><strong>Health Connect instead of Apple Health:</strong> only if you connect it, the App reads your steps, active energy, resting heart rate and sleep from Health Connect and writes the meals and water you log and your weigh-ins to it, exactly as described for Apple Health above. You can revoke the access at any time in the Health Connect settings of your phone. Health Connect data is used only to show you your own progress, never for advertising, and is not shared beyond what this policy lists.</li>
+        <li><strong>Voice control:</strong> the App uses Android’s speech recognition, which runs on your device where available and may otherwise send the audio to Google to recognise commands. We do not receive or store the audio or the recognised text.</li>
+        <li><strong>App integrity check:</strong> Firebase App Check uses Google Play Integrity instead of Apple’s App Attest. It does not give us any personal information.</li>
+        <li><strong>Sign in with Apple</strong> works on Android through Apple’s web sign-in page; we receive the same information as on iPhone.</li>
+        <li><strong>Backups:</strong> Android may include the App’s settings in your own Google backup and restore them on a new device. Those backups are controlled by you and Google.</li>
+        <li><strong>Google</strong> also acts as a processor for Play distribution, payments and Play Integrity checks, under its own privacy policy.</li>
+      </ul>
+      <p>To delete your account without the App, see <a href="keto-delete-account.html">Delete your Ketify account</a>.</p>
+    </section>
+
   </main>
 
   <div class="contact">
